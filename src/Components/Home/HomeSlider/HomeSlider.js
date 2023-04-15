@@ -1,11 +1,11 @@
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import HeroMain from "../../../Assets/images/sliderImages/Hero main img.svg";
-import BgPattern from "../../../Assets/images/sliderImages/Bg pattern.svg";
-// import FevIcon from "../../../Assets/images/sliderImages/Fev icon.svg";
-// import leavesBgPattern from "../../../Assets/images/sliderImages/leaves bg pattern.svg";
+
+import leavesBgPattern from "../../../Assets/images/sliderImages/leaves bg pattern.svg";
 import tree from "../../../Assets/images/sliderImages/tree.svg";
+import product1 from "../../../Assets/images/sliderImages/product1.png";
+import product2 from "../../../Assets/images/sliderImages/product2.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -27,27 +27,51 @@ const HomeSlider = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper h-1/2"
+        className="mySwiper "
       >
         <SwiperSlide>
-          <div className="h-3/4 bg-gradient-to-r from-secondLightPrimary to-white">
-            <div className="relative">
-              <img src={HeroMain} alt="" className="w-4/5" />
-            </div>
-            <div className="absolute top-1/3 left-1/4">
-              <span className="uppercase text-5xl font-bold text-primary">
-                renix{" "}
-              </span>
-              <span className="uppercase text-5xl font-bold ">unani</span>
-              <h1 className="uppercase my-3 text-5xl font-bold">
-                laboratories limited
-              </h1>
-              <p className="text-justify font-medium text-xl ">
-                Healthy Living Natural Solutions
-              </p>
-            </div>
-            <div className="w-1/4 absolute top-1/2 left-0">
-              <img src={tree} alt="" />
+          <div className=" bg-gradient-to-r from-white via-secondLightPrimary to-white">
+            {/* <div className="relative">
+              <img src={HeroMain} alt="" />
+            </div> */}
+
+            <div className="h-screen container mx-auto flex justify-between items-center">
+              <div className="p-16 w-1/2">
+                <span className="uppercase text-5xl font-bold text-primary">
+                  renix{" "}
+                </span>
+                <span className="uppercase text-5xl font-bold ">unani</span>
+                <h1 className="uppercase my-3 text-5xl font-bold">
+                  laboratories limited
+                </h1>
+                <p className="text-justify font-medium text-xl ">
+                  Healthy Living Natural Solutions
+                </p>
+                <button className="bg-primary px-6 py-2 my-8 font-medium text-white">
+                  Shop Now
+                </button>
+              </div>
+              <div className="flex w-1/2 justify-center items-center">
+                <div>
+                  <img className="w-2/3 -mb-10" src={product1} alt="" />
+                </div>
+                <div>
+                  <img className="w-3/4 " src={product2} alt="" />
+                </div>
+              </div>
+              <div className="w-1/5 absolute top-1/2 left-0">
+                <img src={tree} alt="" />
+              </div>
+              <div>
+                <img className="absolute " src={leavesBgPattern} alt="" />
+              </div>
+              <div>
+                <img
+                  className="absolute top-7 right-0 w-1/6"
+                  src={leavesBgPattern}
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </SwiperSlide>
