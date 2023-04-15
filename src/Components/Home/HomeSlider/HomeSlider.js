@@ -6,7 +6,7 @@ import leavesBgPattern from "../../../Assets/images/sliderImages/leaves bg patte
 import tree from "../../../Assets/images/sliderImages/tree.svg";
 import product1 from "../../../Assets/images/sliderImages/product1.png";
 import product2 from "../../../Assets/images/sliderImages/product2.png";
-
+import "./HomeSlider.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
