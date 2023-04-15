@@ -26,14 +26,17 @@ module.exports = withMT({
       // 1440px for our regular desktop device size
     },
     colors: {
-      white: "#fff",
-      yellow: "#FFC812",
-      dark: "#202020",
-      lightDark: "#555",
-      gray: "#D9D9D9",
-      indigo: "#3C0099",
-      smokeWhite: "#EEEEEE",
-      lightBlue: "#516AA2",
+      primary: "#90C347",
+      lightPrimary: "#A6CF6C",
+      secondLightPrimary: "#BCDB91",
+      thirdLightPrimary: "#D3E7B5",
+      whiteSmoke: "#E9F3DA",
+      // secondary color
+      secondary: "#0A2004",
+      textColor: "#3B4D36",
+      lightTextColor: "#6C7968",
+      darkGray: "#9DA69B",
+      gray: "#CED2CD"
     },
     extend: {},
   },
