@@ -6,12 +6,12 @@ const allData=[
     {
         id:1,
         title:"Who we are",
-        description:"Lorem ipsum dolor sit amet ipsum dolor sit amet sit ameteuismod tincidunt ut laoreet tatum zzril delame tLorem ipsum dolor sit amet"
+        description:"Lorem ipsum dolor sit amet ipsum dolor sit amet sit ameteuismod tincidunt ut laoreet tatum zzril delame tLorem ipsum dolor sit amet sit amet ipsum dolor sit ut laoreet tatum zzril delenit augue duis dolore  ut laoreet tatum zzril delenit augue duis dolore  amet sit ameteuismod"
     },
     {
         id:2,
         title:"What we do",
-        description:"Lorem ipsum dolor sit amet ipsum dolor sit ametLorem ipsum dolor sit amet  euismod tincidunt ut laoreet tatum zzril delenit augue duis dolore  magna aliquam erat volutpat. Ut wisi  enim ad minim veniam, quis nostrud"
+        description:"Lorem ipsum dolor sit amet ipsum dolor sit ametLorem laoreet tatum zzril delenit augue duis dolore  magna aliquam erat volutpat. Ut wisi  enim ad minim veniam, quis nostrud ipsum dolor sit amet  euismod tincidunt ut laoreet tatum zzril delenit augue duis dolore  magna aliquam erat volutpat. Ut wisi  enim ad minim veniam, quis nostrud"
     }
 ]
 
