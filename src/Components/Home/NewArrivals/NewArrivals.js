@@ -6,7 +6,39 @@ import img4 from '../../../Assets/images/Products/p4.webp'
 
 const NewArrivals = () => {
 
- 
+    const newProducts=[
+        {
+            _id:1,
+            productName:"Nature Hazmina Plus",
+            price:"800",
+            image:`${img2}`
+        },
+        {
+            _id:2,
+            productName:"Nature Hazmina Plus",
+            price:"600",
+            image:`${img1}`
+        },
+        {
+            _id:3,
+            productName:"Karkuma Superfood",
+            price:"500",
+            image:`${img3}`
+        },
+        {
+            _id:4,
+            productName:"Nature Hazmina Plus",
+            price:"700",
+            image:`${img4}`
+        },
+        {
+            _id:5,
+            productName:"Nature Hazmina Plus",
+            price:"700",
+            image:`${img4}`
+        },
+      
+    ]
   return (
     <div className=' w-full mx-auto my-10 text-center pt-24 pb-10 bg-[#f7fbf3]'>
         <h3 className='bg-thirdLightPrimary w-36 mx-auto font '>F e a t u r e</h3>
