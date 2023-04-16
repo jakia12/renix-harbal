@@ -36,8 +36,8 @@ const Contact = () => {
 
 
     return (
-        <div className='mb-24 w-[80%] mx-auto'>
-            <h1 className='text-4xl text-center font-serif font-semibold text-white'>Contact Form</h1>
+        <div className='mb-24 lg:w-[80%] mx-auto'>
+
 
 
 
@@ -45,10 +45,10 @@ const Contact = () => {
                 <div className=" py-14 px-7 rounded-md">
                     <div className="px-5 lg:px-1">
                         <div>
-                            <h1 className="sm:text-2xl md:text-2xl lg:text-4xl font-bold sm:my-6 md:mb-6 text-[#535353]">
-                                Contact Us
+                            <h1 className="sm:text-2xl md:text-2xl lg:text-4xl font-semibold sm:my-6 md:mb-6 text-[#535353]">
+                                Contact Form
                             </h1>
-                            <p className='w-[50px] border-2 border-primary'></p>
+                            <p className='w-[60px] border-2 border-primary'></p>
                         </div>
 
 
