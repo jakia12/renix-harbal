@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import PublicRoutes from "./Routes/PublicRoutes";
 import WebNav from "./Layouts/WebNav";
-
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
 
@@ -14,6 +14,7 @@ function App() {
           )
         }
       </Routes>
+      <Toaster />
     </div>
   );
 }
