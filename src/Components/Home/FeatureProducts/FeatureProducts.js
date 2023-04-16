@@ -6,7 +6,44 @@ import img4 from '../../../Assets/images/Products/p4.webp'
 
 const FeatureProducts = () => {
 
-   
+    const products=[
+        {
+            id:1,
+            productName:"Nature Hazmina Plus",
+            price:"800",
+            image:`${img1}`
+        },
+        {
+            id:2,
+            productName:"Nature Hazmina Plus",
+            price:"600",
+            image:`${img2}`
+        },
+        {
+            id:3,
+            productName:"Karkuma Superfood",
+            price:"500",
+            image:`${img3}`
+        },
+        {
+            id:4,
+            productName:"Nature Hazmina Plus",
+            price:"700",
+            image:`${img4}`
+        },
+        {
+            id:5,
+            productName:"Nature Hazmina Plus",
+            price:"600",
+            image:`${img4}`
+        },
+        {
+            id:6,
+            productName:"Nature Hazmina Plus",
+            price:"600",
+            image:`${img4}`
+        }
+    ]
   return (
     <div className='lg:w-[90%] w-full mx-auto my-10 text-center '>
         <h3 className='bg-whiteSmoke w-24 mx-auto '>Feature</h3>
