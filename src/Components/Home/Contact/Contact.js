@@ -45,7 +45,7 @@ const Contact = () => {
                 <div className=" py-14 px-7 rounded-md">
                     <div className="px-5 lg:px-1">
                         <div>
-                            <h1 className="sm:text-2xl md:text-2xl lg:text-4xl font-semibold sm:my-6 md:mb-6 text-[#535353]">
+                            <h1 className="sm:text-2xl md:text-2xl lg:text-4xl font-semibold mb-2 text-[#535353]">
                                 Contact Form
                             </h1>
                             <p className='w-[60px] border-2 border-primary'></p>
