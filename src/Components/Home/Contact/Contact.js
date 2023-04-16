@@ -8,7 +8,6 @@ import { toast } from 'react-hot-toast';
 
 const Contact = () => {
     const form = useRef();
-
     const { register, handleSubmit, control, reset, formState: { errors }, } = useForm();
     const handleSendData = (data) => {
         //console.log("data", data);
@@ -37,12 +36,8 @@ const Contact = () => {
 
     return (
         <div className='mb-24 lg:w-[80%] mx-auto'>
-
-
-
-
-            <div className=" w-full md:p-14 p-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
-                <div className=" py-14 px-7 rounded-md">
+            <div className="w-full md:p-14 p-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
+                <div className="py-14 px-7 rounded-md">
                     <div className="px-5 lg:px-1">
                         <div>
                             <h1 className="sm:text-2xl md:text-2xl lg:text-4xl font-semibold mb-2 text-[#535353]">
@@ -50,8 +45,6 @@ const Contact = () => {
                             </h1>
                             <p className='w-[60px] border-2 border-primary'></p>
                         </div>
-
-
                         <div className="pt-4 lg:pt-8 flex justify-start items-center">
                             <div className="  p-3 rounded-md inline-block mr-4">
                                 <Icon
@@ -70,16 +63,13 @@ const Contact = () => {
                                 </p>
                             </div>
                         </div>
-
-
-
                         <div className="pt-4 lg:pt-8 flex justify-start items-center mb-2">
                             <div className="p-3  rounded-md inline-block mr-4">
                                 <Icon icon="ic:round-access-time-filled" className="text-2xl text-primary" />
                                 <Icon icon="" />
                             </div>
                             <div>
-                                
+
                                 <p className="text-sm font-semibold text-[#535353]">
                                     {/* {officeInfo?.officeEmail} */}
                                     Mon - Fri: 3:00AM - 12:00PM
@@ -118,23 +108,21 @@ const Contact = () => {
                                 <p className="text-sm font-semibold text-[#535353]">
                                     {/* {officeInfo?.officePhone} */}
                                     +(123)1500-560-2545
-                                   
+
                                 </p>
                                 <p className="text-sm font-semibold text-[#535353]">
                                     {/* {officeInfo?.officePhone} */}
                                     +(123)1500-560-2545
-                                    
+
                                 </p>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-                <div className="bg-white py-14 px-7 rounded-md mt-24 ">
+                <div className="bg-white md:py-14 px-7 rounded-md md:mt-24 ">
                     <form action="" ref={form} onSubmit={handleSubmit(handleSendData)}>
                         <div className="w-full mb-8">
-                            
+
                             <label className="block">
                                 {/* <p className="text-gray-500 text-xs uppercase my-2">Name</p> */}
                                 <input
@@ -157,7 +145,7 @@ const Contact = () => {
                                 />
                             </label>
                             {errors.phone && <p className="mt-[2px] text-red-500  text-sm" role="alert">Please add phone</p>}
-                           
+
 
                             <label className="block">
                                 {/* <p className="text-gray-500 text-xs uppercase my-2">Message</p> */}
