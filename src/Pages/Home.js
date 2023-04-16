@@ -1,4 +1,6 @@
+
 import React from 'react';
+import HomeSlider from "../Components/Home/HomeSlider/HomeSlider/HomeSlider";
 import NaturalSolution from '../Components/Home/NaturalSolution/NaturalSolution';
 import WhoWeAre from '../Components/Home/AboutSection/WhoWeAre';
 import FeatureProducts from '../Components/Home/FeatureProducts/FeatureProducts';
@@ -10,6 +12,7 @@ import Contact from '../Components/Home/Contact/Contact';
 const Home = () => {
     return (
         <div>
+           <HomeSlider/>
             <NaturalSolution/>
             <WhoWeAre/>
             <FeatureProducts/>
