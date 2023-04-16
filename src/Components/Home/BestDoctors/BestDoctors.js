@@ -11,6 +11,42 @@ import img8 from '../../../Assets/images/Dorctors/team-custom-icon-4.png'
 import { Icon } from '@iconify/react';
 const BestDoctors = () => {
 
+    const doctorsData = [
+        {
+            _id: 1,
+            doctorsName: "Angela Adams",
+            category: "Cardiac Surgery",
+            description:"Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis",
+            image: `${img1}`,
+            icon: `${img7}`,
+        },
+        {
+            _id: 2,
+            doctorsName: "Jhon Adams",
+            category: "Cardiac Surgery",
+            description:"Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis",
+            image: `${img2}`,
+            icon: `${img5}`,
+        },
+        {
+            _id: 3,
+            doctorsName: "Angela Miskat",
+            category: "Cardiac Surgery",
+            description:"Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis",
+            price: "500",
+            image: `${img3}`,
+            icon: `${img6}`,
+        },
+        {
+            _id: 4,
+            doctorsName: "Angela Adams",
+            category: "Cardiac Surgery",
+            description:"Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis",
+            image: `${img4}`,
+            icon: `${img8}`,
+        }
+      
+    ]
     return (
         <div className='lg:w-[90%] w-full mx-auto my-10 text-center '>
             <h1 className='text-secondary font-semibold text-3xl mt-3'>Our Best Doctors</h1>
