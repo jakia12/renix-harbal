@@ -1,6 +1,7 @@
 
-import React from 'react';
-import HomeSlider from "../Components/Home/HomeSlider/HomeSlider/HomeSlider";
+
+import HealthCareProducts from "../Components/Home/HealthCareProducts/HealthCareProducts/HealthCareProducts";
+import LocationMap from "../Components/Home/LocationMap/LocationMap";
 import NaturalSolution from '../Components/Home/NaturalSolution/NaturalSolution';
 import WhoWeAre from '../Components/Home/AboutSection/WhoWeAre';
 import FeatureProducts from '../Components/Home/FeatureProducts/FeatureProducts';
@@ -13,6 +14,7 @@ const Home = () => {
     return (
         <div>
            <HomeSlider/>
+            <HealthCareProducts/>
             <NaturalSolution/>
             <WhoWeAre/>
             <FeatureProducts/>
@@ -20,6 +22,7 @@ const Home = () => {
             <NewArrivals/>
             <BestDoctors/>
             <Contact/>
+            <LocationMap/>
         </div>
     );
 };
