@@ -1,47 +1,267 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import logo from "../Assets/images/logo.svg";
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiFillCloseCircle } from 'react-icons/ai';
+import './WebNav.css';
+import TopBar from './TopBar';
 
 
 const WebNav = () => {
-    return (
-        <div className='sticky top-0 bg-white text-sm backdrop-blur-3xl'>
-            <div className='w-11/12 mx-auto' >
-                <ul className='flex justify-between py-8'>
-                    <div>
-                        <li>
-                            <Link to={"/"}><img className='w-[120px] h-[25px] ' src={logo}></img></Link>
-                        </li>
-                    </div>
-                    <div className='flex gap-5'>
-                        <li className='pt-2'>
-                            <Link to={"/"}>Home</Link>
-                        </li>
-                        <li className='pt-2'>
-                            <Link to={"/about"}>About us</Link>
-                        </li>
-                        <li className='pt-2'>
-                            <Link to={"/services"}>Services</Link>
-                        </li>
-                        <li className='pt-2'>
-                            <Link to={"/products"}>Our Products</Link>
-                        </li>
-                        <li className='pt-2'>
-                            <Link to={"/news-media"}>News And Media</Link>
-                        </li>
-                        <li className='pt-2'>
-                            <Link to={"/blogs"}>Blogs</Link>
-                        </li>
-                        <li className='pt-2'>
-                            <Link to={"/contact"}>Contact Us</Link>
-                        </li></div>
 
-                    <div className='flex gap-5'>
-                        <Link to={"/"}><button className='flex px-2 font-medium py-2 rounded text-white border bg-primary border-primary'>Appoinments +</button></Link>
+    //sticky nav
+    const [stickyNav, setStickyNav] = useState(false);
+
+    const navWrapper = useRef();
+    //state for hamburger menu
+    const [isOpen, setIsopen] = useState(false);
+
+    const handleToggle = () => {
+        isOpen === true ? setIsopen(false) : setIsopen(true);
+    }
+
+
+
+    //nav menu active style
+    let activeStyle = {
+
+        borderBottom: '2px solid #90C347'
+    };
+
+    useEffect(() => {
+
+
+        const handleClickOutside = (event) => {
+            if (isOpen &&
+                navWrapper.current &&
+                !navWrapper.current.contains(event.target)
+            ) {
+                setIsopen(false);
+
+
+
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+
+        //return wrapper.current;
+
+    }, [isOpen]);
+
+
+
+    //sticky nav on scroll
+
+    useEffect(() => {
+        window.onscroll = () => {
+            setStickyNav(window.pageYOffset === 0 ? false : true);
+            return () => (window.onscroll = null);
+        };
+    }, []);
+
+    return (
+
+        <header>
+            {/* topbar nav */}
+            <TopBar />
+            <nav className={` w-full top-0 right-0 left-0 z-[10] py-5 md:py-1 text-[#FFF] container flex  items-center justify-between md:mx-auto px-10 md:px-[103px]  ${stickyNav ? 'bg-white fixed shadow-md shadow-gray-200' : 'bg-white'}`}
+
+            >
+                {/* brand logo */}
+                <Link to={"/"}><img className='w-[120px] h-[25px] ' src={logo}></img></Link>
+
+                {/* mobile nav */}
+                <div
+
+                    className="responsive_menu "
+
+                >
+                    <button
+                        onClick={handleToggle}
+                        className="hamburger_icon text-darkBlack">
+                        <GiHamburgerMenu />
+                    </button>
+                    <div
+                        ref={navWrapper}
+                        className={`side_nav shadow-lg shadow-gray-300 ${isOpen == true ? 'active' : ''}`}
+
+                    >
+                        <button
+                            className="close_btn "
+                            onClick={handleToggle}
+                        >
+                            <AiFillCloseCircle />
+                        </button>
+                        <ul className="mobile_menu">
+
+                            <li>
+                                <a
+                                    href="/"
+                                    className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+
+
+                                >Home</a>
+                            </li>
+                            <li >
+                                <a
+                                    href="/about"
+                                    className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+
+
+
+                                >
+                                    About Us
+                                </a>
+                            </li>
+                            <li >
+                                <a
+                                    href="/services"
+                                    className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+
+
+
+                                >
+                                    Services
+                                </a>
+                            </li>
+                            <li >
+                                <a
+                                    href="/news-media"
+                                    className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+
+
+
+                                >
+                                    News and Media
+                                </a>
+                            </li>
+                            <li >
+                                <a
+                                    href="/blogs"
+                                    className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+
+
+
+                                >
+                                    Blogs
+                                </a>
+                            </li>
+                            <li >
+                                <a
+                                    href="/contact"
+                                    className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+
+
+
+                                >
+                                    Contact
+                                </a>
+                            </li>
+                            <li>
+                                <Link to={"/"}><button className=' px-2  py-2 rounded text-white border bg-primary border-primary text-base'>Appoinments +</button></Link>
+                            </li>
+
+
+                        </ul>
                     </div>
-                </ul>
-            </div>
-        </div>
+                </div>
+
+                <div className="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+                    <ul className='flex gap-4 items-center justify-between py-6'>
+                        <li
+
+                        >
+                            <NavLink
+                                to={"/"}
+                                className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+                                style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined
+                                }
+
+                            >Home</NavLink>
+                        </li>
+
+                        <li
+
+
+                        >
+                            <NavLink
+                                to={"/about"}
+                                className='p-2 text-textColor uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+                                style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined}
+                            >About us</NavLink>
+                        </li>
+                        <li
+
+                        >
+                            <NavLink
+                                to={"/services"}
+                                className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+                                style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined}
+                            >Services</NavLink>
+                        </li>
+                        <li
+
+                        >
+                            <NavLink
+                                to={"/products"}
+                                className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+                                style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined}
+                            >Our Products</NavLink>
+                        </li>
+                        <li
+
+                        >
+                            <NavLink
+                                to={"/news-media"}
+                                className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+                                style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined}
+                            >News And Media</NavLink>
+                        </li>
+                        <li
+
+                        >
+                            <NavLink
+                                to={"/blogs"}
+                                className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+                                style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined}
+
+                            >Blogs</NavLink>
+                        </li>
+                        <li
+
+
+                        >
+                            <NavLink
+                                to={"/contact"}
+                                className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+
+                                style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined}
+                            >Contact Us</NavLink>
+                        </li>
+
+
+                        <div className='flex gap-5'>
+
+                        </div>
+                    </ul>
+                </div>
+
+                {/* call to action button */}
+                <Link to={"/"}><button className='hidden md:flex items-center px-2  py-2 rounded text-white border bg-primary border-primary text-base'>Appoinments +</button></Link>
+            </nav>
+        </header>
+
 
 
     );
