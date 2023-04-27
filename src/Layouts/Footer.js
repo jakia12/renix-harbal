@@ -7,8 +7,9 @@ const Footer = () => {
     return (
         <div>
 
+
             <footer className="bg-secondary dark:bg-gray-900">
-                <div className="container mx-auto w-full md:max-w-6xl px-8 md:px-4 py-6">
+                <div className="px-8 md:px-[103px] py-6">
                     <div className="md:flex gap-6 justify-center md:justify-around items-center ">
                         <div className="w-full md:w-2/5 sm:mx-auto mx-0 ">
                             <div className="mt-8">
@@ -77,7 +78,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <hr className="my-6 border-lightTextColor border-1.5 sm:mx-auto  lg:my-6" />
-                    <div className="sm:flex sm:items-center sm:justify-between">
+                    <div className="md:flex md:items-center md:justify-between">
                         <span className="text-sm text-lightTextColor sm:text-center dark:text-gray-400">© 2023 <Link to={'/'} className="hover:underline">Renix</Link>. All Rights Reserved.
                         </span>
                         {/* footer icon */}
