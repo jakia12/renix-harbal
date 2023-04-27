@@ -100,10 +100,14 @@ button.close_btn {
     button.hamburger_icon {
         display: block;
     }
+
+    button.hamburger_icon {
+        top: 30%
+    }
 }
 
-@media screen and (max-width:576px) {
 
+@media screen and (max-width:768px) {
 
     /*****mobile menu******/
     .side_nav {
@@ -113,5 +117,15 @@ button.close_btn {
 
     button.hamburger_icon {
         top: 13px
+    }
+}
+
+@media screen and (max-width:576px) {
+
+
+
+
+    button.hamburger_icon {
+        top: 12px
     }
 }
