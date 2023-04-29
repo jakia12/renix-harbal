@@ -33,7 +33,9 @@ const Checkout = () => {
         </Link>
       </div>
       <div className="mt-10">
-        <h1 className="uppercase font-semibold text-xl">Billing & shipping</h1>
+        <h1 className="uppercase font-semibold text-xl my-4">
+          Billing & shipping
+        </h1>
         <div className=" grid grid-cols-3 gap-4 font-light">
           <div>
             <label>
@@ -107,6 +109,46 @@ const Checkout = () => {
           rows="2"
           placeholder="Notes about your order, e.g. special notes for delivery."
         ></textarea>
+      </div>
+      <div>
+        <h1 className="uppercase font-semibold text-xl my-4">Your order</h1>
+        <p className="font-sm text-base text-primary my-6">Have Coupon?</p>
+        <p className="text-base font-medium my-6">Choose Shipping Method</p>
+        <div className="my-8 text-sm font-light">
+          <div className="mb-10">
+            <div className="flex justify-between items-center mb-3">
+              <div className="flex justify-center items-center gap-2">
+                <input type="radio" name="" id="" />
+                <label>Delivery Outside Dhaka</label>
+              </div>
+              <div>
+                <span>৳</span> 49.00
+              </div>
+            </div>
+            <div className="flex justify-between items-center">
+              <div className="flex justify-center items-center gap-2">
+                <input type="radio" name="" id="" />
+                <label>Delivery Inside Dhaka</label>
+              </div>
+              <div>
+                <span>৳</span> 49.00
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-between items-center my-4">
+            <div className="text-base font-medium">Cart total</div>
+            <div>
+              <span>৳</span> 49.00
+            </div>
+          </div>
+          <hr />
+          <div className="flex justify-between items-center my-4">
+            <div className="text-lg text-primary font-medium">Grand total</div>
+            <div>
+              <span>৳</span> 49.00
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
