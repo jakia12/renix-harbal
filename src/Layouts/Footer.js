@@ -7,13 +7,14 @@ const Footer = () => {
     return (
         <div>
 
+
             <footer className="bg-secondary dark:bg-gray-900">
-                <div className="container mx-auto w-full md:max-w-6xl px-8 md:px-4 py-6">
-                    <div className="md:flex gap-6 justify-center md:justify-around items-center ">
-                        <div className="w-full md:w-2/5 sm:mx-auto mx-0 ">
+                <div className="px-8 sm:px-10 lg:px-[103px] pt-6 pb-10">
+                    <div className="flex gap-6 justify-center lg:justify-around items-center flex-wrap   md1:flex-wrap lg:flex-nowrap">
+                        <div className="w-full  lg:w-2/5  ">
                             <div className="mt-8">
                                 <Link to={'/'} className="flex items-center">
-                                    <img src={logo} className="h-8 mr-3" alt="Remix Logo" />
+                                    <img src={logo} className="h-8 mr-3" alt="Renix Logo" />
 
                                 </Link>
                                 <p className="py-3 text-lightTextColor text-sm leading-7 ">
@@ -24,7 +25,7 @@ const Footer = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="w-full md:w-1/5 sm:mx-auto mx-0">
+                        <div className="w-full  lg:w-1/5 ">
                             <h2 className="mb-4 text-sm font-semibold text-[#f7f7f7] capitalize dark:text-white">Quick Links</h2>
                             <ul className="text-lightTextColor flex flex-col gap-y-2 text-sm font-normal capitalize mb-6">
                                 <li className="">
@@ -41,7 +42,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="w-full md:w-1/5 sm:mx-auto mx-0">
+                        <div className="w-full  lg:w-1/5 ">
                             <h2 className="mb-4 text-sm font-semibold text-[#f7f7f7] capitalize dark:text-white">Services</h2>
                             <ul className="text-lightTextColor flex flex-col gap-y-2 text-sm font-normal capitalize mb-6">
                                 <li>
@@ -58,7 +59,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="w-full md:w-1/5 sm:mx-auto mx-0">
+                        <div className="w-full  lg:w-1/5 ">
                             <h2 className="mb-4 text-sm font-semibold text-[#f7f7f7] capitalize dark:text-white">Contact Info</h2>
                             <ul className="text-lightTextColor flex flex-col gap-y-2 text-sm font-normal capitalize mb-6">
                                 <li>
@@ -77,7 +78,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <hr className="my-6 border-lightTextColor border-1.5 sm:mx-auto  lg:my-6" />
-                    <div className="sm:flex sm:items-center sm:justify-between">
+                    <div className="lg:flex lg:items-center lg:justify-between">
                         <span className="text-sm text-lightTextColor sm:text-center dark:text-gray-400">© 2023 <Link to={'/'} className="hover:underline">Renix</Link>. All Rights Reserved.
                         </span>
                         {/* footer icon */}
