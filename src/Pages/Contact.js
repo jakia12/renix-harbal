@@ -23,7 +23,7 @@ const Contact = () => {
                 <div className="py-10 px-7 rounded-md">
                     <div className="px-5 lg:px-1 ">
                         <div className='font-bold'>
-                        <h3 className='contact-header uppercase pb-4 font-semibold underline underline-offset-8 decoration-2 '>Hade Office</h3>
+                        <h3 className='contact-header uppercase pb-4 underline underline-offset-8 decoration-2 '>Hade Office</h3>
                         <p className='uppercase'>Renix Unani Laboratories Limited,</p>
                         <p>Fatullah 1421 Dhaka, Dhaka Division, Bangladesh</p>
                         <p>Phone: +8801724-024373</p>

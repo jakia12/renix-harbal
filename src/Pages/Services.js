@@ -19,7 +19,7 @@ const Services = () => {
                 ></input>
                 </div>
                 <div className='py-8'>
-                <button type="submit" className="bg-textColor p-2 rounded-md text-white lg:w-[120px]  uppercase block">
+                <button type="submit" className="bg-primary p-2 rounded-md text-white lg:w-[120px]  uppercase block">
                   Verify
                 </button>
               </div>
