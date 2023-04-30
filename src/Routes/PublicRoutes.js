@@ -1,3 +1,4 @@
+import Checkout from "../Components/Checkout/Checkout";
 import About from "../Pages/About";
 import Blogs from "../Pages/Blogs";
 import Contact from "../Pages/Contact";
@@ -6,15 +7,15 @@ import NewsMedia from "../Pages/NewsMedia";
 import Products from "../Pages/Products";
 import Services from "../Pages/Services";
 
-const PublicRoutes =
-    [
-        { path: "/", Component: Home },
-        { path: "/about", Component: About },
-        { path: "/security-check", Component: Services },
-        { path: "/products", Component: Products },
-        { path: "/news-media", Component: NewsMedia },
-        { path: "/blogs", Component: Blogs },
-        { path: "/contact", Component: Contact },
-    ];
+const PublicRoutes = [
+  { path: "/", Component: Home },
+  { path: "/about", Component: About },
+  { path: "/services", Component: Services },
+  { path: "/products", Component: Products },
+  { path: "/news-media", Component: NewsMedia },
+  { path: "/blogs", Component: Blogs },
+  { path: "/contact", Component: Contact },
+  { path: "/checkout", Component: Checkout },
+];
 
 export default PublicRoutes;
