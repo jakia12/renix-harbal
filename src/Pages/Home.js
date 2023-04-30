@@ -9,6 +9,7 @@ import NewsLetter from '../Components/Home/NewsLetter/NewsLetter';
 import NewArrivals from '../Components/Home/NewArrivals/NewArrivals';
 import BestDoctors from '../Components/Home/BestDoctors/BestDoctors';
 import Contact from '../Components/Home/Contact/Contact';
+import HomeSlider from "../Components/Home/HomeSlider/HomeSlider/HomeSlider";
 
 const Home = () => {
     return (
