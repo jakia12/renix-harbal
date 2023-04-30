@@ -119,13 +119,13 @@ const WebNav = () => {
                             </li>
                             <li >
                                 <a
-                                    href="/services"
+                                    href="/security-check"
                                     className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
 
 
 
                                 >
-                                    Services
+                                    Security check
                                 </a>
                             </li>
                             <li >
@@ -200,11 +200,11 @@ const WebNav = () => {
 
                         >
                             <NavLink
-                                to={"/services"}
+                                to={"/security-check"}
                                 className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
                                 style={({ isActive }) =>
                                     isActive ? activeStyle : undefined}
-                            >Services</NavLink>
+                            > Security check</NavLink>
                         </li>
                         <li
 
