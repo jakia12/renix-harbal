@@ -14,7 +14,7 @@ const Footer = () => {
                         <div className="w-full  lg:w-2/5  ">
                             <div className="mt-8">
                                 <Link to={'/'} className="flex items-center">
-                                    <img src={logo} className="h-8 mr-3" alt="Remix Logo" />
+                                    <img src={logo} className="h-8 mr-3" alt="Renix Logo" />
 
                                 </Link>
                                 <p className="py-3 text-lightTextColor text-sm leading-7 ">
