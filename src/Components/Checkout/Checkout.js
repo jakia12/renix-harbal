@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Checkout = () => {
   return (
-    <div className="container mx-auto w-[1235px]  mt-4">
+    <div className="container mx-auto   mt-4">
       <div>
         <div className=" border py-2 px-4 bg-thirdLightPrimary bg-opacity-50 border-primary text-blue-gray-400">
           Regular customer ?{" "}
