@@ -101,7 +101,8 @@ const Footer = () => {
               <Link to={"/"} className="hover:underline">
                 Renix
               </Link>
-              . All Rights Reserved.
+              . All Rights Reserved. <a href="https://thinkystorm.com">Develop by ThinkyStorm</a>
+
             </span>
             {/* footer icon */}
             <SocialIcon />

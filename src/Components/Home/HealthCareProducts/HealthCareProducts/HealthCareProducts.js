@@ -54,8 +54,7 @@ const HealthCareProducts = () => {
         <div className="bg-secondary text-primary rounded-3xl p-8  w-full md:w-1/2 lg:w-1/3">
           <h1 className=" text-3xl ">Trusted Brands</h1>
           <p className="md:my-2">
-            Lorem ipsum dolor sit amet csit amet csit amet Lorem ipsum dolor sit
-            amet, consectetur adipisicing elit. Doloribus, laborum!
+          Renix Unani Laboratories Limited is a trusted brand dedicated to producing high-quality, natural medicine that is effective in treating illnesses without harmful side effects. 
           </p>
           <div className=" ml-9 mt-4 ">
             <ul className="list-disc ">

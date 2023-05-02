@@ -56,10 +56,8 @@ const Contact = () => {
                                 {/* <p className="font-bold text-lg ">Office Location</p> */}
                                 <p className=" text-sm font-semibold text-[#535353]">
                                     {/* {officeInfo?.officeAddress} */}
-                                    Lorem ipsum dolor sit
-                                    amet, consectetuer adipiscing elit, sed
-                                    diam nonummy nibh .
-                                    Address
+                                    Fatullah 1421 Dhaka, Dhaka Division, Bangladesh
+
                                 </p>
                             </div>
                         </div>
@@ -72,12 +70,12 @@ const Contact = () => {
 
                                 <p className="text-sm font-semibold text-[#535353]">
                                     {/* {officeInfo?.officeEmail} */}
-                                    Mon - Fri: 3:00AM - 12:00PM
+                                    Saturday - Thursday: 10:00AM - 5:00PM
 
                                 </p>
                                 <p className="text-sm font-semibold text-[#535353]">
                                     {/* {officeInfo?.officeEmail} */}
-                                    Sat - Sun: Closed
+                                    Friday: Closed
                                 </p>
                             </div>
                         </div>
@@ -90,11 +88,10 @@ const Contact = () => {
                                 {/* <p className="font-bold text-lg ">Email</p> */}
                                 <p className="text-sm font-semibold text-[#535353]">
                                     {/* {officeInfo?.officeEmail} */}
-                                    abc123@gmail.com
-                                </p>
+                                    Info@Renixlaboratories.com
+                                    </p>
                                 <p className="text-sm font-semibold text-[#535353]">
                                     {/* {officeInfo?.officeEmail} */}
-                                    email123@gmail.com
                                 </p>
                             </div>
                         </div>
@@ -107,12 +104,12 @@ const Contact = () => {
                                 {/* <p className="font-bold text-lg">Call Us</p> */}
                                 <p className="text-sm font-semibold text-[#535353]">
                                     {/* {officeInfo?.officePhone} */}
-                                    +(123)1500-560-2545
+                                    +(880)1724-024373
+
 
                                 </p>
                                 <p className="text-sm font-semibold text-[#535353]">
                                     {/* {officeInfo?.officePhone} */}
-                                    +(123)1500-560-2545
 
                                 </p>
                             </div>

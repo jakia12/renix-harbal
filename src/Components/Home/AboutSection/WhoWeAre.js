@@ -6,12 +6,12 @@ const allData=[
     {
         _id:1,
         title:"Who we are",
-        description:"Lorem ipsum dolor sit amet ipsum dolor sit amet sit ameteuismod tincidunt ut laoreet tatum zzril delame tLorem ipsum dolor sit amet sit amet ipsum dolor sit ut laoreet tatum zzril delenit augue duis dolore  ut laoreet tatum zzril delenit augue duis dolore  amet sit ameteuismod"
+        description:"Renix Laboratories (Unani) Ltd. is a company that specializes in producing high-quality, natural medicine to improve healthcare. The company recognizes the benefits of Unani treatment, a system of medicine that has been in practice for over 5000 years and has proven to be effective without harmful side effects. The Honorable Prime Minister of Bangladesh has also taken an interest in herbal medicine and appointed Unani and Ayurvedic doctors in hospitals and health complexes. Renix Laboratories has appointed doctors who provide Unani health services in remote areas of Bangladesh. The company is dedicated to producing effective natural medicine and promoting the benefits of Unani treatment to contribute to the healthcare industry."
     },
     {
         _id:2,
         title:"What we do",
-        description:"Lorem ipsum dolor sit amet ipsum dolor sit ametLorem laoreet tatum zzril delenit augue duis dolore  magna aliquam erat volutpat. Ut wisi  enim ad minim veniam, quis nostrud ipsum dolor sit amet  euismod tincidunt ut laoreet tatum zzril delenit augue duis dolore  magna aliquam erat volutpat. Ut wisi  enim ad minim veniam, quis nostrud"
+        description:"Renix Laboratories (Unani) Ltd. produces high-quality, natural medicine without harmful side effects, utilizing knowledge of the 5000-year-old Unani treatment system. With the global rise of antibiotic resistance and harmful side effects of modern medicine, the company recognizes the importance of promoting herbal medicines. Renix Laboratories has also appointed doctors to provide Unani health services in remote areas of the country. The company's expertise in natural herbs and commitment to Unani treatment make it a leader in the healthcare industry."
     }
 ]
 
