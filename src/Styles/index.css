@@ -12,3 +12,11 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #222;
 }
+
+
+/******all medicine table******/
+
+
+table th {
+    border-radius: 10px
+}

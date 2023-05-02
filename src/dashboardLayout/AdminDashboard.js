@@ -122,11 +122,11 @@ const AdminDashboard = () => {
                                     <li
 
 
-                                        onClick={handleMedicineDropdown}
-                                    >
-                                        <Link to={''}
 
-                                            className="flex items-center gap-5 p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                    >
+                                        <span
+                                            onClick={handleMedicineDropdown}
+                                            className="flex items-center cursor-pointer gap-5 p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                         >
                                             <span className='text-lg'>
@@ -148,7 +148,7 @@ const AdminDashboard = () => {
                                                     </span>)
                                             }
 
-                                        </Link>
+                                        </span>
 
                                         <ul
                                             className={`pl-3  ${openMedicine === true ? "block" : "hidden"}`}
@@ -218,11 +218,11 @@ const AdminDashboard = () => {
                                     </li>
                                     <li
 
-                                        onClick={handleOrderDropdown}
-                                    >
-                                        <Link to={''}
 
-                                            className="flex items-center gap-5 p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                    >
+                                        <span
+                                            onClick={handleOrderDropdown}
+                                            className="flex items-center cursor-pointer gap-5 p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                         >
                                             <span className='text-lg'>
@@ -243,7 +243,7 @@ const AdminDashboard = () => {
                                                     </span>)
                                             }
 
-                                        </Link>
+                                        </span>
                                         <ul
                                             className={`pl-3  ${openOrder === true ? "block" : "hidden"}`}
                                         >
@@ -295,12 +295,12 @@ const AdminDashboard = () => {
                                         </ul>
                                     </li>
                                     <li
-                                        onClick={handleDoctorDropdown}
+
                                     >
 
-                                        <Link to={''}
-
-                                            className="flex items-center gap-5 p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                        <span
+                                            onClick={handleDoctorDropdown}
+                                            className="flex items-center cursor-pointer gap-5 p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                         >
                                             <span className='text-lg'>
@@ -322,7 +322,7 @@ const AdminDashboard = () => {
                                                     </span>)
                                             }
 
-                                        </Link>
+                                        </span>
                                         <ul
                                             className={`pl-3  ${openDoctor === true ? "block" : "hidden"}`}
                                         >
@@ -360,11 +360,11 @@ const AdminDashboard = () => {
                                         </ul>
                                     </li>
                                     <li
-                                        onClick={handleNewsDropdown}
-                                    >
-                                        <Link to={''}
 
-                                            className="flex items-center gap-5 p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                    >
+                                        <span
+                                            onClick={handleNewsDropdown}
+                                            className="flex items-center cursor-pointer gap-5 p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                         >
                                             <span className='text-lg'>
@@ -386,7 +386,7 @@ const AdminDashboard = () => {
                                                     </span>)
                                             }
 
-                                        </Link>
+                                        </span>
                                         <ul
                                             className={`pl-3  ${openNews === true ? "block" : "hidden"}`}
                                         >
@@ -439,11 +439,11 @@ const AdminDashboard = () => {
                                     </li>
                                     <li
 
-                                        onClick={handleBlogDropdown}
-                                    >
-                                        <Link to={''}
 
-                                            className="flex items-center gap-5 p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                    >
+                                        <span
+                                            onClick={handleBlogDropdown}
+                                            className="flex items-center cursor-pointer gap-5 p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                         >
                                             <span className='text-lg text-white'>
@@ -465,7 +465,7 @@ const AdminDashboard = () => {
                                                     </span>)
                                             }
 
-                                        </Link>
+                                        </span>
                                         <ul
                                             className={`pl-3  ${openBlog === true ? "block" : "hidden"}`}
                                         >
@@ -691,3 +691,5 @@ const AdminDashboard = () => {
 }
 
 export default AdminDashboard
+
+
