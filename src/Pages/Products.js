@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Products = () => {
-    return (
-        <div>
-            Welcome to our products page
-        </div>
-    );
+  return (
+    <div>
+      <h1>welcome products pages</h1>
+    </div>
+  );
 };
 
 export default Products;

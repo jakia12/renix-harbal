@@ -7,7 +7,7 @@ import { AiFillInstagram, AiFillYoutube } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 const TopBar = () => {
     return (
-        <div className='hidden md:flex items-center justify-between border-b border-[#999] py-4 md:px-[103px]'>
+        <div className='hidden lg:flex items-center justify-between border-b border-[#999] py-4 md:px-[103px]'>
             {/* topbar info */}
             <div className="flex gap-8 justify-center">
                 {/* info item */}

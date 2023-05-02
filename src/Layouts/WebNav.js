@@ -68,7 +68,7 @@ const WebNav = () => {
         <header>
             {/* topbar nav */}
             <TopBar />
-            <nav className={` w-full top-0 right-0 left-0 z-[10] py-5 md:py-1 text-[#FFF] container flex  items-center justify-between md:mx-auto px-10 md:px-[103px]  ${stickyNav ? 'bg-white fixed shadow-md shadow-gray-200' : 'bg-white'}`}
+            <nav className={` w-full  top-0 right-0 left-0 z-[10] py-5 md:py-4 text-[#FFF]  flex  items-center justify-between md:mx-auto px-10 md:px-[103px]  ${stickyNav ? 'bg-white fixed shadow-md shadow-gray-200' : 'bg-white'}`}
 
             >
                 {/* brand logo */}
@@ -119,13 +119,13 @@ const WebNav = () => {
                             </li>
                             <li >
                                 <a
-                                    href="/services"
+                                    href="/security-check"
                                     className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
 
 
 
                                 >
-                                    Services
+                                    Security check
                                 </a>
                             </li>
                             <li >
@@ -170,7 +170,7 @@ const WebNav = () => {
                     </div>
                 </div>
 
-                <div className="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+                <div className="hidden w-full lg:block md:w-auto" id="navbar-multi-level">
                     <ul className='flex gap-4 items-center justify-between py-6'>
                         <li
 
@@ -200,11 +200,11 @@ const WebNav = () => {
 
                         >
                             <NavLink
-                                to={"/services"}
+                                to={"/security-check"}
                                 className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
                                 style={({ isActive }) =>
                                     isActive ? activeStyle : undefined}
-                            >Services</NavLink>
+                            > Security check</NavLink>
                         </li>
                         <li
 
@@ -258,7 +258,7 @@ const WebNav = () => {
                 </div>
 
                 {/* call to action button */}
-                <Link to={"/"}><button className='hidden md:flex items-center px-2  py-2 rounded text-white border bg-primary border-primary text-base'>Appoinments +</button></Link>
+                <Link to={"/"}><button className='hidden lg:flex items-center px-2  py-2 rounded text-white border bg-primary border-primary text-base'>Appoinments +</button></Link>
             </nav>
         </header>
 

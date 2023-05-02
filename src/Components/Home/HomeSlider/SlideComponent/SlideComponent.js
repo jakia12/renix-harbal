@@ -12,9 +12,7 @@ const SlideComponent = () => {
           <div className="w-full text-center text-xl md:text-2xl lg:text-5xl font-bold md:text-start pb-20 md:pb-0 md:pl-6 md:w-2/4 ">
             <span className="uppercase  text-primary">renix </span>
             <span className="uppercase  ">unani</span>
-            <h1 className="uppercase md:leading-3  lg:my-6 ">
-              laboratories limited
-            </h1>
+            <h1 className="uppercase ">laboratories limited</h1>
             <p className=" tracking-normal text-sm lg:tracking-widest font-medium md:text-xl ">
               Healthy Living Natural Solutions
             </p>
@@ -58,8 +56,8 @@ export default SlideComponent;
   <div className="lg:h-screen container mx-auto flex flex-col-reverse md:px-20 md:py-10 md:flex-row md:justify-between md:items-center">
     <div className="w-full text-center text-xl md:text-2xl lg:text-5xl font-bold md:text-start pb-20 md:pb-0 md:pl-6 md:w-2/4 ">
       <span className="uppercase  text-primary">renix </span>
-      <span className="uppercase  ">unani</span>
-      <h1 className="uppercase md:leading-3  lg:my-6 ">laboratories limited</h1>
+      <span className="uppercase">unani</span>
+      {/* <h1 className="uppercase lg:my-6 ">laboratories limited</h1> */}
       <p className=" tracking-normal text-sm lg:tracking-widest font-medium md:text-xl ">
         Healthy Living Natural Solutions
       </p>
