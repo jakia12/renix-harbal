@@ -1,4 +1,8 @@
 import About from "../Pages/About";
+import Message from "../Pages/AboutUs/Message";
+import Mission from "../Pages/AboutUs/Mission";
+import Profile from "../Pages/AboutUs/Profile";
+import Responsibility from "../Pages/AboutUs/Responsibility";
 import Blogs from "../Pages/Blogs";
 import Conditions from "../Pages/Conditions";
 import Contact from "../Pages/Contact";
@@ -21,6 +25,10 @@ const PublicRoutes =
         { path: "/privacy-policy", Component: Privacy},
         { path: "/refound-return", Component: Refound},
         { path: "/terms-conditions", Component: Conditions},
+        { path: "/company-profile", Component: Profile},
+        { path: "/mission-vission", Component: Mission},
+        { path: "/corporate-social-responsibility", Component: Responsibility},
+        { path: "/message-from-managing-director", Component: Message},
     ];
 
 export default PublicRoutes;
