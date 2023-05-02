@@ -15,11 +15,11 @@ const Footer = () => {
                   <img src={logo} className="h-8 mr-3" alt="Renix Logo" />
                 </Link>
                 <p className="py-3 text-lightTextColor text-sm leading-7 ">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime mollitia, molestiae quas vel sint commodi repudiandae
-                  consequuntur voluptatum laborum numquam blanditiis harum
-                  quisquam eius sed odit fugiat iusto fuga praesentium optio,
-                  eaque rerum! Provident similique accusantium nemo autem.
+                  Renix Laboratories (Unani) Ltd. is a healthcare company that
+                  produces high-quality complete medicines using natural herbs,
+                  contributing to the shift towards alternative medicine. The
+                  Hon'ble Prime Minister of Bangladesh has recognized the
+                  importance of herbal medicines.
                 </p>
               </div>
             </div>
@@ -39,14 +39,19 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <a to="" className="hover:underline">
+                  <Link to="/privacy-policy" className="hover:underline">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a to="" className="hover:underline">
-                    terms Of use
-                  </a>
+                  <Link to="/refound-return" className="hover:underline">
+                    Refound & Return
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/terms-conditions" className="hover:underline">
+                    Terms & Conditions
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -81,11 +86,11 @@ const Footer = () => {
               <h2 className="mb-4 text-sm font-semibold text-[#f7f7f7] capitalize dark:text-white">
                 Contact Info
               </h2>
-              <ul className="text-lightTextColor flex flex-col gap-y-2 text-sm font-normal capitalize mb-6">
-                <li>+882156545565</li>
-                <li>@kdf3565454</li>
-                <li>Renix Laboratories</li>
-                <li>Dhalphar Narayangong</li>
+              <ul className="text-lightTextColor flex flex-col gap-y-2 text-sm font-normal capitalize mb-8">
+                <li>+8801724-024373</li>
+                <li>info@renixlaboratories.com</li>
+                <li>RENIX UNANI LABORATORIES LIMITED,</li>
+                <li>Fatullah 1421 Dhaka, Dhaka Division, Bangladesh</li>
               </ul>
             </div>
           </div>

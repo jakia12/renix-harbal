@@ -3,6 +3,9 @@ import img1 from "../../Assets/images/Products/p1.png";
 
 const ProductDetails = () => {
   const [addToCart, setAddToCart] = useState(false);
+  const handlePlus = () => {
+    console.log("ok");
+  };
   return (
     <div className="w-3/5 mx-auto">
       <div className="grid grid-cols-2 gap-6">
@@ -29,7 +32,12 @@ const ProductDetails = () => {
             {addToCart ? (
               <div>
                 <div className=" border border-primary p-1  flex justify-evenly items-center">
-                  <span className="text-4xl font-medium cursor-pointer">-</span>
+                  <span
+                    onClick={handlePlus()}
+                    className="text-4xl font-medium cursor-pointer"
+                  >
+                    -
+                  </span>
                   <aside>
                     <input
                       className="px-8 py-2 text-center text-xl font-semibold border-none outline-primary bg-primary text-white"
