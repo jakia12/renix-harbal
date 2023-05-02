@@ -8,4 +8,4 @@ const About = () => {
     );
 };
 
-export default About;n
+export default About;

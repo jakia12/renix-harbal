@@ -14,11 +14,11 @@ const Footer = () => {
                         <div className="w-full  lg:w-2/5  ">
                             <div className="mt-8">
                                 <Link to={'/'} className="flex items-center">
-                                    <img src={logo} className="h-8 mr-3" alt="Remix Logo" />
+                                    <img src={logo} className="h-8 mr-3" alt="Renix Logo" />
 
                                 </Link>
                                 <p className="py-3 text-lightTextColor text-sm leading-7 ">
-                                Renix Laboratories (Unani) Ltd. is a healthcare company that produces high-quality complete medicines using natural herbs, contributing to the shift towards alternative medicine. The Hon'ble Prime Minister of Bangladesh has recognized the importance of herbal medicines.
+                                    Renix Laboratories (Unani) Ltd. is a healthcare company that produces high-quality complete medicines using natural herbs, contributing to the shift towards alternative medicine. The Hon'ble Prime Minister of Bangladesh has recognized the importance of herbal medicines.
                                 </p>
                             </div>
                         </div>
@@ -59,27 +59,27 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="w-full w-3.5 md:w-1/5 sm:mx-auto mx-0">
+                        <div className="w-full  lg:w-1/5 ">
                             <h2 className="mb-4 text-sm font-semibold text-[#f7f7f7] capitalize dark:text-white">Contact Info</h2>
                             <ul className="text-lightTextColor flex flex-col gap-y-2 text-sm font-normal capitalize mb-8">
                                 <li>
-                                +8801724-024373
+                                    +8801724-024373
                                 </li>
                                 <li>
-                                info@renixlaboratories.com
+                                    info@renixlaboratories.com
                                 </li>
                                 <li>
-                                RENIX UNANI LABORATORIES LIMITED,
+                                    RENIX UNANI LABORATORIES LIMITED,
                                 </li>
                                 <li>
-                                Fatullah 1421 Dhaka, Dhaka Division, Bangladesh
+                                    Fatullah 1421 Dhaka, Dhaka Division, Bangladesh
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <hr className="my-6 border-lightTextColor border-1.5 sm:mx-auto  lg:my-6" />
-                    <div className="sm:flex sm:items-center sm:justify-between">
-                        <span className="text-sm text-lightTextColor sm:text-center dark:text-gray-400">© 2023 <Link to={'/'} className="hover:underline">Renix</Link>. All Rights Reserved. Develope by <a href="http://thinkystorm.com/">Thinky Strom.</a>
+                    <div className="lg:flex lg:items-center lg:justify-between">
+                        <span className="text-sm text-lightTextColor sm:text-center dark:text-gray-400">© 2023 <Link to={'/'} className="hover:underline">Renix</Link>. All Rights Reserved.
                         </span>
                         {/* footer icon */}
                         <SocialIcon />
