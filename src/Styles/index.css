@@ -20,3 +20,7 @@ body {
 table th {
     border-radius: 10px
 }
+
+input {
+    border: none
+}
