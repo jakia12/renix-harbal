@@ -1,42 +1,28 @@
-<<<<<<< HEAD
-input,
-textarea {
-=======
 .input_style {
->>>>>>> f8fbd98b65bce12b91672fe21ef681434bf43fd5
-    background: #FFFFFF;
-    border: 1px solid #DADADA;
-    border-radius: 8px;
-
+  background: #ffffff;
+  border: 1px solid #dadada;
+  border-radius: 8px;
 }
 
 input:focus {
-    border: 1px solid #047267;
+  border: 1px solid #047267;
 }
 
 .form-border {
-    background: #FFFFFF;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
 }
 
-<<<<<<< HEAD
-label {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-=======
 .contact_label {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
->>>>>>> f8fbd98b65bce12b91672fe21ef681434bf43fd5
-    line-height: 24px;
-    text-align: center;
-    color: #90C347;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 24px;
+  text-align: center;
+  color: #90c347;
 }
 
 .button {
-    border-radius: 4px;
-
+  border-radius: 4px;
 }
