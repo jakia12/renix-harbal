@@ -8,6 +8,7 @@ import AdminDashboard from "./dashboardLayout/AdminDashboard";
 import AdminRoutes from "./Routes/AdminRoute";
 import { aboutRoutes } from "./Routes/AboutRoutes";
 import About from "./Pages/About";
+import Profile from "./Pages/AboutUs/Profile";
 
 function App() {
   return (
