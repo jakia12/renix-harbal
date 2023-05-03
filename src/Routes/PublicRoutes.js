@@ -14,11 +14,12 @@ import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import Products from "../Pages/Products";
 import Refound from "../Pages/Refound";
 import Services from "../Pages/Services";
+import Dashboard from "../Pages/dashboard/Dashboard";
 
 const PublicRoutes = [
   { path: "/", Component: Home },
   { path: "/about", Component: About },
-  { path: "/services", Component: Services },
+  { path: "/security-check", Component: Services },
   { path: "/products", Component: Products },
   { path: "/news-media", Component: NewsMedia },
   { path: "/blogs", Component: Blogs },
@@ -32,6 +33,7 @@ const PublicRoutes = [
   { path: "/message-from-managing-director", Component: Message },
   { path: "/products/details", Component: ProductDetails },
   { path: "/Checkout", Component: Checkout },
+  { path: "/dashbord", Component: Dashboard },
 ];
 
 export default PublicRoutes;
