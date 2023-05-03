@@ -30,7 +30,7 @@ const About = () => {
                                         style={({ isActive }) =>
                                             isActive ? activeStyle : undefined}
                                     >
-                                        <span>
+                                        <span className='text-white text-xl'>
                                             <RxCaretRight />
                                         </span>
                                         <span>
