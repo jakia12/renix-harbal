@@ -6,25 +6,35 @@ import Footer from "./Layouts/Footer";
 import Main from "./mainLayout/Main";
 import AdminDashboard from "./dashboardLayout/AdminDashboard";
 import AdminRoutes from "./Routes/AdminRoute";
+import { aboutRoutes } from "./Routes/AboutRoutes";
+import About from "./Pages/About";
 
 function App() {
   return (
     <div>
 
       <Routes>
-        {/* main layout */}
+        {/* main Routes */}
         <Route path="/" element={<Main />}>
           {PublicRoutes.map(({ path, Component }, index) => (
             <Route key={index + 45} path={path} element={<Component />} />
           ))}
         </Route>
 
-        {/* dashboard layout */}
+        {/* dashboard routes */}
         <Route path="/adminDashboard" element={<AdminDashboard />}>
           {AdminRoutes.map(({ path, Component }, index) => (
             <Route key={index} path={path} element={<Component />} />
           ))}
         </Route>
+
+        {/* about routes */}
+        <Route path="/about" element={<About />}>
+          {aboutRoutes.map(({ path, Component }, index) => (
+            <Route key={index} path={path} element={<Component />} />
+          ))}
+        </Route>
+
 
       </Routes>
 

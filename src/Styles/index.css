@@ -21,6 +21,11 @@ table th {
     border-radius: 10px
 }
 
-input {
-    border: none
+/*******about page*******/
+.transition_move {
+    transition: all 0.3s ease-in;
+}
+
+.bottom_border {
+    border-bottom: 1px solid #ddd;
 }
