@@ -10,14 +10,13 @@ const NaturalSolution = () => {
             <div className='md:w-2/3 text-center sm:px-3 md:px-0'>
                 <h1 className='font-bold uppercase text-3xl text-secondary'><span className='text-primary'>Renix </span> unani laboratories limited</h1>
                 <p className='textColor mt-2'>Healthy Living Natural Solution</p>
-                <p className='sm:mt-4 lg:mt-20  text-textColor'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                    enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-                    nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
-                    hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat
+                <p className='sm:mt-4 lg:mt-20  text-textColor text-justify'>Renix Unani Laboratories Limited is a company dedicated to producing high-quality, natural medicines for healthy living. They specialize in the Unani treatment system, which has been used for over 5000 years and has been proven to be successful and effective without harmful side effects.
+                 Renix Laboratories is committed to promoting the benefits of natural medicine and contributing to the healthcare industry through the production of complete medicines made from all natural herbs.
 
-                    nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit prae-
-                    sent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+
+
+
+                </p>
             </div>
             <div className='md:w-1/3 '> <img src={img2} alt='medicine image' /></div>
         </div>
