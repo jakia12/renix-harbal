@@ -157,6 +157,8 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    //   </div>
+    // </div>
 
     //     <div className=' p-8 form-border'>
     //     <form onSubmit={handleForm}>

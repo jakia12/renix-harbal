@@ -22,6 +22,7 @@ const Home = () => {
       <BestDoctors />
       <Contact />
       <LocationMap />
+    
     </div>
   );
 };
