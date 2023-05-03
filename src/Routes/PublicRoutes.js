@@ -18,7 +18,7 @@ const PublicRoutes = [
   { path: "/news-media", Component: NewsMedia },
   { path: "/blogs", Component: Blogs },
   { path: "/contact", Component: Contact },
-  { path: "/checkout", Component: Checkout },
+  { path: "/checkout", Component: Checkout }, gi
 ];
 
 export default PublicRoutes;
