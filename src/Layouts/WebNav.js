@@ -68,7 +68,7 @@ const WebNav = () => {
         <header>
             {/* topbar nav */}
             <TopBar />
-            <nav className={` w-full  top-0 right-0 left-0 z-[10] py-5 md:py-4 text-[#FFF]  flex  items-center justify-between md:mx-auto px-10 md:px-[103px]  ${stickyNav ? 'bg-white fixed shadow-md shadow-gray-200' : 'bg-white'}`}
+            <nav className={` w-full  top-0 right-0 left-0 z-[10] py-5 md:py-2 text-[#FFF]  flex  items-center justify-between md:mx-auto px-10 md:px-[103px] bottom_border ${stickyNav ? 'bg-white fixed shadow-md shadow-gray-200' : 'bg-white'}`}
 
             >
                 {/* brand logo */}
