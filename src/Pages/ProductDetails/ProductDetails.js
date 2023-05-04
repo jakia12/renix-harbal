@@ -108,7 +108,7 @@ const ProductDetails = () => {
           </ul>
         </div>
       </div>
-      <div className="border lg:m-3 mb-96 border-gray px-4 mt-8 ">
+      <div className="border lg:mb-12 lg:m-3  border-gray px-4 mt-8 ">
         {activeTab === "tab1" ? (
           <ProductTable></ProductTable>
         ) : (

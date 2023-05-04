@@ -89,35 +89,27 @@ const Products = () => {
           <div className=" flex gap-6 flex-wrap mx-auto justify-center ">
             {products.map((product) => (
               <Link to={"/products/details"}>
-                <div className="w-72" key={product._id}>
-                  <div className="w-72 h-80 p-4 px-8 rounded-xl border-2 border-whiteSmoke ">
-                    <div className="flex justify-between items-center mt-4">
+                <div
+                  className="w-80 px-8 py-4 shadow-md rounded-lg"
+                  key={product._id}
+                >
+                  <div className="w-full h-64 rounded-xl ">
+                    <div className="flex justify-between items-center ">
                       <span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
                         Sold out
                       </span>
-
                       <span class="bg-green-100 self-end  text-green-800 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
                         sale !
                       </span>
-                      {/* <h2 className="bg-primary  text-xs rounded-sm ml-44 text-white mt-3">
-                      sold out
-                    </h2>
-
-                    <h2 className="bg-primary w-10 text-xs rounded-sm ml-44 text-white mt-3">
-                      Sale!
-                    </h2> */}
                     </div>
                     <img
                       src={product.image}
                       alt=""
-                      className="w-44 mx-auto  h-52 mt-7"
+                      className="w-44 mx-auto h-52 "
                     />
-
-                    <div className="text-xs float-right mb-4">
-                      <p className="text-lightPrimary font-medium">
-                        Stock: {product.stock}
-                      </p>
-                    </div>
+                    <p className="text-lightPrimary my-2 font-medium text-xs float-right">
+                      Stock: {product.stock}
+                    </p>
                   </div>
                   <div>
                     <h1 className="text-secondary text-sm mt-2">
