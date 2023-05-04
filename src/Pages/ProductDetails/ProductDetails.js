@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import img1 from "../../Assets/images/Products/p1.png";
+import { Tab } from "@headlessui/react";
+import ProductTable from "./ProductTable";
+import ProductInfo from "./ProductInfo";
 
 const ProductDetails = () => {
   const [addToCart, setAddToCart] = useState(false);
+  const [activeTab, setActiveTab] = useState("tab1");
+
+  const active = {
+    border: "none",
+    backgroundColor: "primary",
+    textWeight: "700",
+    color: "white",
+  };
   const [count, setCount] = useState(1);
   const handleCountMinus = () => {
     if (count === 1) {
@@ -11,15 +22,14 @@ const ProductDetails = () => {
       setCount((prevCount) => prevCount - 1);
     }
   };
-  console.log(count);
   return (
-    <div className="w-3/5 mx-auto">
-      <div className="grid grid-cols-2 gap-6">
-        <div className="border flex justify-center items-center  border-gray-300">
-          <img src={img1} className="" alt="" />
+    <div className="w-3/5 mx-auto mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="border m-3 flex justify-center items-start place-content-center border-gray-300">
+          <img src={img1} className="h-[400px] w-[250px]" alt="" />
         </div>
-        <div className="">
-          <div className="shadow-lg p-7">
+        <div className="m-3">
+          <div className="shadow-lg p-7 ">
             <h1 className="text-3xl font-semibold uppercase tracking-widest">
               Mirapro 15mg tab
             </h1>{" "}
@@ -71,35 +81,39 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      <div class="relative overflow-x-auto mt-8">
-        <h1 className="text-xl font-medium mt-4">Product Details</h1>
-        <table class="w-full my-4 border-collapse border border-slate-500  text-sm text-left text-gray-500 dark:text-gray-400">
-          <tbody>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <td class="px-6 py-4 border border-slate-600">name</td>
-              <td class="px-6 py-4 border border-slate-600">MIRAPRO</td>
-            </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <td class="px-6 py-4 border border-slate-600">Generic Name</td>
-              <td class="px-6 py-4 border border-slate-600">
-                {" "}
-                SQUARE PHARMACEUTICALS LIMITED
-              </td>
-            </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <td class="px-6 py-4 border border-slate-600">Strength</td>
-              <td class="px-6 py-4 border border-slate-600">15 MG</td>
-            </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <td class="px-6 py-4 border border-slate-600">Category</td>
-              <td class="px-6 py-4 border border-slate-600">Tab</td>
-            </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <td class="px-6 py-4 border border-slate-600">Price</td>
-              <td class="px-6 py-4 border border-slate-600">9 Bdt</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="relative overflow-x-auto m-3 mt-8 mb-6">
+        <div>
+          <ul>
+            <li
+              onClick={() => setActiveTab("tab1")}
+              className={
+                activeTab === "tab1"
+                  ? "float-left text-sm bg-primary py-2 text-white border-0 leading-10 text-center font-bold uppercase box-border mr-3  px-6"
+                  : "float-left px-6 border border-lightTextColor py-2  mr-3 text-sm  leading-10 text-center uppercase box-border "
+              }
+            >
+              Product Details
+            </li>
+
+            <li
+              onClick={() => setActiveTab("tab2")}
+              className={
+                activeTab === "tab2"
+                  ? "float-left text-sm bg-primary text-white border-0 leading-10 text-center font-bold uppercase box-border py-2 px-6"
+                  : "float-left px-6 border border-lightTextColor text   mr-3 text-sm py-2 leading-10 text-center uppercase box-border "
+              }
+            >
+              Product Information
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="border lg:mb-12 lg:m-3  border-gray px-4 mt-8 ">
+        {activeTab === "tab1" ? (
+          <ProductTable></ProductTable>
+        ) : (
+          <ProductInfo></ProductInfo>
+        )}
       </div>
     </div>
   );
