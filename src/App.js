@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import PublicRoutes from "./Routes/PublicRoutes";
 import WebNav from "./Layouts/WebNav";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import Footer from "./Layouts/Footer";
 import Main from "./mainLayout/Main";
 import AdminDashboard from "./dashboardLayout/AdminDashboard";
@@ -9,10 +9,23 @@ import AdminRoutes from "./Routes/AdminRoute";
 import { aboutRoutes } from "./Routes/AboutRoutes";
 import About from "./Pages/About";
 import Profile from "./Pages/AboutUs/Profile";
+import OrderFLoatingCart from "./Layouts/OrderFLoatingCart";
+import { useState } from "react";
 
 function App() {
+  const [openCart, setOpenCart] = useState(false);
   return (
-    <div>
+    <div className="relative">
+      {openCart ? (
+        <OrderFLoatingCart setOpenCart={setOpenCart}></OrderFLoatingCart>
+      ) : (
+        <div className="fixed z-20 w-24 h-28 top-[45vh] right-0">
+          {" "}
+          <div onClick={() => setOpenCart(true)} className="bg-primary p-10">
+            <h1>ok</h1>
+          </div>
+        </div>
+      )}
 
       <Routes>
         {/* main Routes */}
@@ -35,8 +48,6 @@ function App() {
             <Route key={index} path={path} element={<Component />} />
           ))}
         </Route>
-
-
       </Routes>
 
       <Toaster />
