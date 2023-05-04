@@ -10,7 +10,7 @@ import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import Products from "../Pages/Products";
 import Refound from "../Pages/Refound";
 import Services from "../Pages/Services";
-import Dashboard from "../Pages/dashboard/Dashboard";
+
 
 const PublicRoutes = [
   { path: "/", Component: Home },
@@ -24,7 +24,7 @@ const PublicRoutes = [
   { path: "/terms-conditions", Component: Conditions },
   { path: "/products/details", Component: ProductDetails },
   { path: "/Checkout", Component: Checkout },
-  { path: "/dashbord", Component: Dashboard },
+  
 ];
 
 export default PublicRoutes;
