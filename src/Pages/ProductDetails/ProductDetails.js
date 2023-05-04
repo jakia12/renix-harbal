@@ -3,9 +3,15 @@ import img1 from "../../Assets/images/Products/p1.png";
 
 const ProductDetails = () => {
   const [addToCart, setAddToCart] = useState(false);
-  const handlePlus = () => {
-    console.log("ok");
+  const [count, setCount] = useState(1);
+  const handleCountMinus = () => {
+    if (count === 1) {
+      setAddToCart(false);
+    } else {
+      setCount((prevCount) => prevCount - 1);
+    }
   };
+  console.log(count);
   return (
     <div className="w-3/5 mx-auto">
       <div className="grid grid-cols-2 gap-6">
@@ -33,7 +39,7 @@ const ProductDetails = () => {
               <div>
                 <div className=" border border-primary p-1  flex justify-evenly items-center">
                   <span
-                    onClick={handlePlus()}
+                    onClick={handleCountMinus}
                     className="text-4xl font-medium cursor-pointer"
                   >
                     -
@@ -42,10 +48,15 @@ const ProductDetails = () => {
                     <input
                       className="px-8 py-2 text-center text-xl font-semibold border-none outline-primary bg-primary text-white"
                       type="text"
-                      value={1}
+                      value={count}
                     />
                   </aside>
-                  <span className="text-4xl font-medium cursor-pointer">+</span>
+                  <span
+                    onClick={() => setCount(Number(count) + 1)}
+                    className="text-4xl font-medium cursor-pointer"
+                  >
+                    +
+                  </span>
                 </div>
               </div>
             ) : (
