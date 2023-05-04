@@ -11,6 +11,7 @@ import About from "./Pages/About";
 import Profile from "./Pages/AboutUs/Profile";
 import OrderFLoatingCart from "./Layouts/OrderFLoatingCart";
 import { useState } from "react";
+import { BsFillBagFill } from "react-icons/bs";
 
 function App() {
   const [openCart, setOpenCart] = useState(false);
@@ -19,10 +20,20 @@ function App() {
       {openCart ? (
         <OrderFLoatingCart setOpenCart={setOpenCart}></OrderFLoatingCart>
       ) : (
-        <div className="fixed z-20 w-24 h-28 top-[45vh] right-0">
+        <div className="fixed z-20 top-[45vh] right-0 cursor-pointer">
           {" "}
-          <div onClick={() => setOpenCart(true)} className="bg-primary p-10">
-            <h1>ok</h1>
+          <div
+            onClick={() => setOpenCart(true)}
+            className="bg-primary rounded-l-lg"
+          >
+            <div className="flex flex-col justify-center items-center text-white">
+              <div className="flex flex-col justify-center items-center py-2 ">
+                {" "}
+                <BsFillBagFill className="text-2xl "></BsFillBagFill>
+                <p className="pt-2 text-xs">0 item</p>
+              </div>
+              <p className="bg-secondary rounded-bl-lg p-2 text-xs">500 tk</p>
+            </div>
           </div>
         </div>
       )}
