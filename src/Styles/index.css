@@ -23,7 +23,7 @@ table th {
 
 /*******about page*******/
 .transition_move {
-    transition: all 0.3s ease-in;
+    transition: all 0.3s;
 }
 
 .bottom_border {
