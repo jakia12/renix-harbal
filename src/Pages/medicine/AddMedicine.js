@@ -27,7 +27,7 @@ const AddMedicine = () => {
                             <input
                                 type="text"
                                 id="name"
-                                className="bg-[#F0FDF4] text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500"
+                                className="bg-[#F0FDF4] text-gray-900 text-sm rounded-lg focus:outline-none  block w-full p-2.5 focus:border-none"
                                 placeholder="Medicine Name"
                                 {...register("name", {
                                     required: "Medicine brand Name is required",

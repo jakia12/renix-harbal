@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './AdminDashboard.css';
-import { Link, useNavigate, Outlet } from 'react-router-dom';
+import { NavLink, useNavigate, Outlet, Link } from 'react-router-dom';
 import logo from '../Assets/images/logo.svg';
 import { TbMedicineSyrup } from 'react-icons/tb';
 import { FiUsers } from 'react-icons/fi';
@@ -19,12 +19,13 @@ import SearchBar from '../Components/searchBar/SearchBar';
 const AdminDashboard = () => {
     const navWrapper = useRef();
     //hide sidenav by default
-    const [isOpen, setIsOpen] = useState(false);
+    const [issideNavOpen, setSidenavOpen] = useState(false);
 
 
     //show  medicine
     const [openMedicine, setOpenMedicine] = useState(false);
     //show  orders
+
     const [openOrder, setOpenOrder] = useState(false);
 
     //show doctor
@@ -40,7 +41,7 @@ const AdminDashboard = () => {
 
     //show sidenav on toggle
     const handleToggle = () => {
-        isOpen === true ? setIsOpen(false) : setIsOpen(true);
+        issideNavOpen === true ? setSidenavOpen(false) : setSidenavOpen(true);
     }
 
     // //show user dropdown on toggle
@@ -87,13 +88,11 @@ const AdminDashboard = () => {
 
 
         const handleClickOutside = (event) => {
-            if (isOpen &&
+            if (issideNavOpen &&
                 navWrapper.current &&
                 !navWrapper.current.contains(event.target)
             ) {
-                setIsOpen(false);
-
-
+                setSidenavOpen(false);
 
             }
         };
@@ -105,10 +104,15 @@ const AdminDashboard = () => {
 
         //return wrapper.current;
 
-    }, [isOpen]);
+    }, [issideNavOpen]);
 
 
+    //active style for sidenav
 
+    let activeStyle = {
+
+        backgroundColor: '#3B4D36'
+    };
 
     return (
         <section className=''>
@@ -131,9 +135,12 @@ const AdminDashboard = () => {
 
                                 <ul className="space-y-2 pt-8">
                                     <li>
-                                        <Link to={'overview'}
+                                        <NavLink to={'overview'}
 
-                                            className="flex items-center gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                            className="flex items-center gap-4 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                            style={({ isActive }) =>
+                                                isActive ? activeStyle : undefined
+                                            }
 
                                         >
                                             <span className='text-lg'>
@@ -143,7 +150,7 @@ const AdminDashboard = () => {
 
                                             <span className="">Dashboard</span>
 
-                                        </Link>
+                                        </NavLink>
                                     </li>
                                     <li
 
@@ -152,39 +159,35 @@ const AdminDashboard = () => {
                                     >
                                         <span
                                             onClick={handleMedicineDropdown}
-                                            className="flex items-center cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                            className="flex items-center justify-between cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
 
                                         >
-                                            <span className='text-lg'>
-                                                <TbMedicineSyrup />
+                                            <div className="flex gap-4 items-center">
+                                                <span className='text-lg'>
+                                                    <TbMedicineSyrup />
+                                                </span>
+
+
+                                                <span className="">Medicine</span>
+                                            </div>
+                                            <span className={`text-2xl transition_move ${openMedicine === true ? "rotate-180" : ""}`}>
+                                                <RxCaretDown />
                                             </span>
 
-
-                                            <span className="">Medicine</span>
-                                            {
-                                                openMedicine === true ?
-                                                    (
-                                                        <span className='text-2xl'>
-                                                            <RxCaretUp />
-                                                        </span>
-                                                    )
-                                                    :
-                                                    (<span className='text-2xl'>
-                                                        <RxCaretDown />
-                                                    </span>)
-                                            }
 
                                         </span>
 
                                         <ul
-                                            className={`pl-3  ${openMedicine === true ? "block" : "hidden"}`}
+                                            className={`drop_down transition_move ${openMedicine === true ? "block" : "hidden"}`}
 
                                         >
                                             <li>
-                                                <Link to={'medicine/addMedicineCategory'}
+                                                <NavLink to={'medicine/addMedicineCategory'}
 
-                                                    className="flex items-center  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center  p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -193,13 +196,15 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-2">Add Category</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to={'medicine/allMedicineCategory'}
+                                                <NavLink to={'medicine/allMedicineCategory'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -208,13 +213,15 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">All Categories</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to={'medicine/addMedicine'}
+                                                <NavLink to={'medicine/addMedicine'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -223,13 +230,15 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">Add Medicine</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to={'medicine/allMedicines'}
+                                                <NavLink to={'medicine/allMedicines'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -238,7 +247,7 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">All Medicines</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                         </ul>
                                     </li>
@@ -248,36 +257,32 @@ const AdminDashboard = () => {
                                     >
                                         <span
                                             onClick={handleOrderDropdown}
-                                            className="flex items-center cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                            className="flex items-center justify-between cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
 
                                         >
-                                            <span className='text-lg'>
-                                                <BiBorderAll />
+                                            <div className="flex items-center gap-4">
+                                                <span className='text-lg'>
+                                                    <BiBorderAll />
+                                                </span>
+
+                                                <span className="">Orders</span>
+                                            </div>
+                                            <span className={`text-2xl transition_move ${openOrder === true ? "rotate-180" : ""}`}>
+                                                <RxCaretDown />
                                             </span>
 
-                                            <span className="">Orders</span>
-                                            {
-                                                openOrder === true ?
-                                                    (
-                                                        <span className='text-2xl'>
-                                                            <RxCaretUp />
-                                                        </span>
-                                                    )
-                                                    :
-                                                    (<span className='text-2xl'>
-                                                        <RxCaretDown />
-                                                    </span>)
-                                            }
 
                                         </span>
                                         <ul
-                                            className={`pl-3  ${openOrder === true ? "block" : "hidden"}`}
+                                            className={`drop_down  ${openOrder === true ? "block" : "hidden"}`}
                                         >
                                             <li>
-                                                <Link to={'orders/pendingOrders'}
+                                                <NavLink to={'orders/pendingOrders'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px]  hover:bg-textColor font-normal  py-2.5 rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -286,13 +291,15 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">Pending Orders</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to={'orders/confirmedOrders'}
+                                                <NavLink to={'orders/confirmedOrders'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -301,13 +308,15 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">Confirmed Orders</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to={'orders/rejectedOrders'}
+                                                <NavLink to={'orders/rejectedOrders'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px]  hover:bg-textColor font-normal  py-2.5 rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -316,7 +325,7 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">Rejected Orders</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                         </ul>
                                     </li>
@@ -326,37 +335,33 @@ const AdminDashboard = () => {
 
                                         <span
                                             onClick={handleDoctorDropdown}
-                                            className="flex items-center cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                            className="flex items-center cursor-pointer justify-between gap-4 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
 
                                         >
-                                            <span className='text-lg'>
-                                                <FiUsers />
+                                            <div className="flex items-center gap-4">
+                                                <span className='text-lg'>
+                                                    <FiUsers />
+                                                </span>
+
+
+                                                <span className="">Doctors</span>
+                                            </div>
+                                            <span className={`text-2xl transition_move ${openDoctor === true ? "rotate-180" : ""}`}>
+                                                <RxCaretDown />
                                             </span>
 
 
-                                            <span className="">Doctors</span>
-                                            {
-                                                openDoctor === true ?
-                                                    (
-                                                        <span className='text-2xl'>
-                                                            <RxCaretUp />
-                                                        </span>
-                                                    )
-                                                    :
-                                                    (<span className='text-2xl'>
-                                                        <RxCaretDown />
-                                                    </span>)
-                                            }
-
                                         </span>
                                         <ul
-                                            className={`pl-3  ${openDoctor === true ? "block" : "hidden"}`}
+                                            className={`drop_down  ${openDoctor === true ? "block" : "hidden"}`}
                                         >
                                             <li>
-                                                <Link to={'doctor/addDoctor'}
+                                                <NavLink to={'doctor/addDoctor'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px]  hover:bg-textColor font-normal  py-2.5 rounded-md backdrop:dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -365,13 +370,15 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">Add doctor</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to={'doctor/allDoctors'}
+                                                <NavLink to={'doctor/allDoctors'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -380,7 +387,7 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">All Doctors</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
 
                                         </ul>
@@ -390,37 +397,34 @@ const AdminDashboard = () => {
                                     >
                                         <span
                                             onClick={handleNewsDropdown}
-                                            className="flex items-center cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                            className="flex items-center justify-between cursor-pointer gap-4 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
 
                                         >
-                                            <span className='text-lg'>
-                                                <BiNews />
+
+                                            <div className="flex items-center gap-4">
+                                                <span className='text-lg'>
+                                                    <BiNews />
+                                                </span>
+
+
+                                                <span className="">News and Media</span>
+                                            </div>
+                                            <span className={`text-2xl transition_move ${openNews === true ? "rotate-180" : ""}`}>
+                                                <RxCaretDown />
                                             </span>
 
 
-                                            <span className="">News and Media</span>
-                                            {
-                                                openNews === true ?
-                                                    (
-                                                        <span className='text-2xl'>
-                                                            <RxCaretUp />
-                                                        </span>
-                                                    )
-                                                    :
-                                                    (<span className='text-2xl'>
-                                                        <RxCaretDown />
-                                                    </span>)
-                                            }
-
                                         </span>
                                         <ul
-                                            className={`pl-3  ${openNews === true ? "block" : "hidden"}`}
+                                            className={`drop_down  ${openNews === true ? "block" : "hidden"}`}
                                         >
                                             <li>
-                                                <Link to={'news-media/addNewsCategory'}
+                                                <NavLink to={'news-media/addNewsCategory'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -429,13 +433,15 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">Add Category</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to={'news-media/addNewsandMedia'}
+                                                <NavLink to={'news-media/addNewsandMedia'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -444,13 +450,15 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">Add News</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to={'news-media/allNewsandMedia'}
+                                                <NavLink to={'news-media/allNewsandMedia'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -459,7 +467,7 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">All News</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                         </ul>
                                     </li>
@@ -469,37 +477,32 @@ const AdminDashboard = () => {
                                     >
                                         <span
                                             onClick={handleBlogDropdown}
-                                            className="flex items-center cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                            className="flex items-center cursor-pointer gap-4 justify-between px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
 
                                         >
-                                            <span className='text-lg text-white'>
-                                                <MdOutlineArticle />
+                                            <div className="flex items-center gap-4">
+                                                <span className='text-lg text-white'>
+                                                    <MdOutlineArticle />
+                                                </span>
+
+
+                                                <span className="">Blog</span>
+                                            </div>
+                                            <span className={`text-2xl transition_move ${openBlog === true ? "rotate-180" : ""}`}>
+                                                <RxCaretDown />
                                             </span>
-
-
-                                            <span className="">Blog</span>
-                                            {
-                                                openBlog === true ?
-                                                    (
-                                                        <span className='text-2xl'>
-                                                            <RxCaretUp />
-                                                        </span>
-                                                    )
-                                                    :
-                                                    (<span className='text-2xl'>
-                                                        <RxCaretDown />
-                                                    </span>)
-                                            }
 
                                         </span>
                                         <ul
-                                            className={`pl-3  ${openBlog === true ? "block" : "hidden"}`}
+                                            className={`drop_down  ${openBlog === true ? "block" : "hidden"}`}
                                         >
                                             <li>
-                                                <Link to={'blog/addBlogCategory'}
+                                                <NavLink to={'blog/addBlogCategory'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -508,13 +511,15 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">Add Category</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to={'blog/addBlog'}
+                                                <NavLink to={'blog/addBlog'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -523,13 +528,15 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">Add Blog</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to={'blog/allBlogs'}
+                                                <NavLink to={'blog/allBlogs'}
 
-                                                    className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
-
+                                                    className="flex items-center p-2 text-[14px] hover:bg-textColor  font-normal py-2.5  rounded-md dark:text-white dark:hover:bg-gray-700 text-white"
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
                                                 >
                                                     {/* <span className='text-lg'>
                                                         <TbMedicineSyrup />
@@ -538,24 +545,26 @@ const AdminDashboard = () => {
 
                                                     <span className="ml-3">All Blogs</span>
 
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <Link to={'email/allEmails'}
+                                        <NavLink to={'email/allEmails'}
 
-                                            className="flex items-center px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
-
+                                            className="flex items-center cursor-pointer gap-4  px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                            style={({ isActive }) =>
+                                                isActive ? activeStyle : undefined
+                                            }
                                         >
                                             <span className='text-lg'>
                                                 <MdOutlineMailOutline />
                                             </span>
 
 
-                                            <span className="ml-3">Subcribed Emails</span>
+                                            <span>Subcribed Emails</span>
 
-                                        </Link>
+                                        </NavLink>
                                     </li>
 
                                 </ul>
@@ -572,7 +581,7 @@ const AdminDashboard = () => {
                                     {/* <span className='hidden md:inline-block text-firstCol   mr-3'>
                                         <TbEqual />
                                     </span> */}
-                                    <span className=' text-white  mx-3 md:hidden cursor-pointer' title='Open sidenav'
+                                    <span className=' text-white  mx-3 lg:hidden cursor-pointer' title='Open sidenav'
                                         onClick={handleToggle}
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8">
@@ -682,7 +691,7 @@ const AdminDashboard = () => {
                                 ref={navWrapper}
                                 className="">
 
-                                <div className={`side_nav block lg:hidden z-40 h-screen p-4  bg-secondary w-80 dark:bg-gray-800 ${isOpen === true ? 'activ' : ''}`} tabindex="-1" >
+                                <div id="drawer-navigation" className={`side_nav block lg:hidden z-40 h-screen p-4  bg-secondary w-80 dark:bg-gray-800 ${issideNavOpen === true ? 'activ' : ''}`} tabindex="-1" >
                                     {/* <h5 id="drawer-navigation-label" className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5> */}
 
 
@@ -695,10 +704,10 @@ const AdminDashboard = () => {
                                     <div className=" overflow-y-auto px-7">
 
 
-                                        <Link to={'/'} className="flex items-center justify-center">
+                                        <NavLink to={'/'} className="flex items-center justify-center">
 
                                             <img src={logo} className="h-8 mr-3" alt="Renix Logo" />
-                                        </Link>
+                                        </NavLink>
 
 
                                         <hr className="divider_line my-3" />
@@ -727,27 +736,22 @@ const AdminDashboard = () => {
                                             >
                                                 <span
                                                     onClick={handleMedicineDropdown}
-                                                    className="flex items-center cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                                    className="flex items-center cursor-pointer gap-4 justify-between px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
 
                                                 >
-                                                    <span className='text-lg'>
-                                                        <TbMedicineSyrup />
+                                                    <div className="flex items-center gap-4">
+                                                        <span className='text-lg'>
+                                                            <TbMedicineSyrup />
+                                                        </span>
+
+
+                                                        <span className="">Medicine</span>
+                                                    </div>
+
+                                                    <span className={`text-2xl transition_move ${openMedicine === true ? "rotate-180" : ""}`}>
+                                                        <RxCaretDown />
                                                     </span>
 
-
-                                                    <span className="">Medicine</span>
-                                                    {
-                                                        openMedicine === true ?
-                                                            (
-                                                                <span className='text-2xl'>
-                                                                    <RxCaretUp />
-                                                                </span>
-                                                            )
-                                                            :
-                                                            (<span className='text-2xl'>
-                                                                <RxCaretDown />
-                                                            </span>)
-                                                    }
 
                                                 </span>
 
@@ -758,7 +762,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/medicine/addMedicineCategory'}
 
-                                                            className="flex items-center  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center  hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -773,7 +777,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/medicine/allMedicineCategory'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -788,7 +792,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/medicine/addMedicine'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center  hover:bg-textColor p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -803,7 +807,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/medicine/allMedicines'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -823,26 +827,21 @@ const AdminDashboard = () => {
                                             >
                                                 <span
                                                     onClick={handleOrderDropdown}
-                                                    className="flex items-center cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                                    className="flex items-center cursor-pointer gap-4 justify-between px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
 
                                                 >
-                                                    <span className='text-lg'>
-                                                        <BiBorderAll />
+                                                    <div className="flex items-center gap-4">
+                                                        <span className='text-lg'>
+                                                            <BiBorderAll />
+                                                        </span>
+
+                                                        <span className="">Orders</span>
+                                                    </div>
+
+                                                    <span className={`text-2xl transition_move ${openOrder === true ? "rotate-180" : ""}`}>
+                                                        <RxCaretDown />
                                                     </span>
 
-                                                    <span className="">Orders</span>
-                                                    {
-                                                        openOrder === true ?
-                                                            (
-                                                                <span className='text-2xl'>
-                                                                    <RxCaretUp />
-                                                                </span>
-                                                            )
-                                                            :
-                                                            (<span className='text-2xl'>
-                                                                <RxCaretDown />
-                                                            </span>)
-                                                    }
 
                                                 </span>
                                                 <ul
@@ -851,7 +850,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/orders/pendingOrders'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -866,7 +865,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/orders/confirmedOrders'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -881,7 +880,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/orders/rejectedOrders'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -901,27 +900,22 @@ const AdminDashboard = () => {
 
                                                 <span
                                                     onClick={handleDoctorDropdown}
-                                                    className="flex items-center cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                                    className="flex items-center cursor-pointer gap-4 justify-between px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
 
                                                 >
-                                                    <span className='text-lg'>
-                                                        <FiUsers />
+                                                    <div className="flex items-center gap-4">
+                                                        <span className='text-lg'>
+                                                            <FiUsers />
+                                                        </span>
+
+
+                                                        <span className="">Doctors</span>
+                                                    </div>
+
+                                                    <span className={`text-2xl transition_move ${openDoctor === true ? "rotate-180" : ""}`}>
+                                                        <RxCaretDown />
                                                     </span>
 
-
-                                                    <span className="">Doctors</span>
-                                                    {
-                                                        openDoctor === true ?
-                                                            (
-                                                                <span className='text-2xl'>
-                                                                    <RxCaretUp />
-                                                                </span>
-                                                            )
-                                                            :
-                                                            (<span className='text-2xl'>
-                                                                <RxCaretDown />
-                                                            </span>)
-                                                    }
 
                                                 </span>
                                                 <ul
@@ -930,7 +924,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/doctor/addDoctor'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -945,7 +939,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/doctor/allDoctors'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -965,27 +959,22 @@ const AdminDashboard = () => {
                                             >
                                                 <span
                                                     onClick={handleNewsDropdown}
-                                                    className="flex items-center cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                                    className="flex items-center cursor-pointer gap-4 justify-between px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
 
                                                 >
-                                                    <span className='text-lg'>
-                                                        <BiNews />
+                                                    <div className="flex items-center gap-4">
+                                                        <span className='text-lg'>
+                                                            <BiNews />
+                                                        </span>
+
+
+                                                        <span className="">News and Media</span>
+                                                    </div>
+
+                                                    <span className={`text-2xl transition_move ${openNews === true ? "rotate-180" : ""}`}>
+                                                        <RxCaretDown />
                                                     </span>
 
-
-                                                    <span className="">News and Media</span>
-                                                    {
-                                                        openNews === true ?
-                                                            (
-                                                                <span className='text-2xl'>
-                                                                    <RxCaretUp />
-                                                                </span>
-                                                            )
-                                                            :
-                                                            (<span className='text-2xl'>
-                                                                <RxCaretDown />
-                                                            </span>)
-                                                    }
 
                                                 </span>
                                                 <ul
@@ -994,7 +983,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a to={'/adminDashboard/news-media/addNewsCategory'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -1009,7 +998,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/news-media/addNewsandMedia'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -1022,9 +1011,9 @@ const AdminDashboard = () => {
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <Link href={'/adminDashboard/news-media/allNewsandMedia'}
+                                                        <NavLink href={'/adminDashboard/news-media/allNewsandMedia'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -1034,7 +1023,7 @@ const AdminDashboard = () => {
 
                                                             <span className="ml-3">All News</span>
 
-                                                        </Link>
+                                                        </NavLink>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -1044,27 +1033,21 @@ const AdminDashboard = () => {
                                             >
                                                 <span
                                                     onClick={handleBlogDropdown}
-                                                    className="flex items-center cursor-pointer gap-5 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
+                                                    className="flex items-center cursor-pointer gap-4 justify-between px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
 
                                                 >
-                                                    <span className='text-lg text-white'>
-                                                        <MdOutlineArticle />
+                                                    <div className="flex items-center gap-4">
+                                                        <span className='text-lg text-white'>
+                                                            <MdOutlineArticle />
+                                                        </span>
+
+
+                                                        <span className="">Blog</span>
+                                                    </div>
+
+                                                    <span className={`text-2xl transition_move ${openBlog === true ? "rotate-180" : ""}`}>
+                                                        <RxCaretDown />
                                                     </span>
-
-
-                                                    <span className="">Blog</span>
-                                                    {
-                                                        openBlog === true ?
-                                                            (
-                                                                <span className='text-2xl'>
-                                                                    <RxCaretUp />
-                                                                </span>
-                                                            )
-                                                            :
-                                                            (<span className='text-2xl'>
-                                                                <RxCaretDown />
-                                                            </span>)
-                                                    }
 
                                                 </span>
                                                 <ul
@@ -1073,7 +1056,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/blog/addBlogCategory'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center  hover:bg-textColor p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -1088,7 +1071,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/blog/addBlog'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center hover:bg-textColor  p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -1103,7 +1086,7 @@ const AdminDashboard = () => {
                                                     <li>
                                                         <a href={'/adminDashboard/blog/allBlogs'}
 
-                                                            className="flex items-center p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
+                                                            className="flex items-center  hover:bg-textColor p-2 text-[14px] font-normal  rounded-lg dark:text-white dark:hover:bg-gray-700 text-white"
 
                                                         >
                                                             {/* <span className='text-lg'>
@@ -1144,7 +1127,7 @@ const AdminDashboard = () => {
 
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
 
