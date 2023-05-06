@@ -37,7 +37,7 @@ const OrderFLoatingCart = ({ setOpenCart }) => {
           <div className="flex justify-center items-center">
             {" "}
             <button className="shadow-md w-1/2 py-2 px-4 bg-thirdLightPrimary text-white">
-              <Link to={"/checkout"}>Order Now</Link>
+              <a href={"/checkout"}>Order Now</a>
             </button>
             <button className="shadow-md w-1/2 py-2 px-4 bg-secondary text-white">
               Clear Now
