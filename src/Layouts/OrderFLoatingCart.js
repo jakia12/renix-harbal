@@ -1,6 +1,7 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
+import { Link } from "react-router-dom";
 
 const OrderFLoatingCart = ({ setOpenCart }) => {
   return (
@@ -36,7 +37,7 @@ const OrderFLoatingCart = ({ setOpenCart }) => {
           <div className="flex justify-center items-center">
             {" "}
             <button className="shadow-md w-1/2 py-2 px-4 bg-thirdLightPrimary text-white">
-              Order Now
+              <Link to={"/checkout"}>Order Now</Link>
             </button>
             <button className="shadow-md w-1/2 py-2 px-4 bg-secondary text-white">
               Clear Now
