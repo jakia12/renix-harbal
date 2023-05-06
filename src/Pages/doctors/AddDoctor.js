@@ -9,7 +9,12 @@ const AddDoctor = () => {
 
 
     const handleAddDoctor = (data, e) => {
-        console.log(description)
+        const doctor = {
+            doctorName: data.name,
+            description: description
+
+        }
+        console.log(doctor)
     }
     return (
 
