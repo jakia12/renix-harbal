@@ -243,7 +243,7 @@ const WebNav = () => {
                         </li>
                         <li >
                             <NavLink
-                                href="/adminDashboard"
+                                to="/adminDashboard"
                                 className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
 
                                 style={({ isActive }) =>
