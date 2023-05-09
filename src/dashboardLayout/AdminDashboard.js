@@ -135,7 +135,7 @@ const AdminDashboard = () => {
 
                                 <ul className="space-y-2 pt-8">
                                     <li>
-                                        <NavLink to={'overview'}
+                                        <NavLink to={'/adminDashboard'}
 
                                             className="flex items-center gap-4 px-2 py-2.5 text-[14px] font-normal rounded dark:text-white dark:hover:bg-gray-700 text-white hover:bg-textColor"
                                             style={({ isActive }) =>

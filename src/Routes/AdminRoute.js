@@ -19,7 +19,7 @@ import RejectedOrders from "../Pages/orders/RejectedOrders";
 
 const AdminRoutes =
     [
-        { path: "overview", Component: Dashboard },
+        { path: "/adminDashboard", Component: Dashboard },
         { path: "medicine/addMedicineCategory", Component: AddMedicineCategory },
         { path: "medicine/allMedicineCategory", Component: AllMedicineCategories },
         { path: "medicine/addMedicine", Component: AddMedicine },
