@@ -107,7 +107,7 @@ const NewArrivals = () => {
     ];
     return (
         <div className='  py-14 bg-[#f7fbf3]'>
-            <div className="lg:w-[90%] w-full  mx-auto my-10 text-center">
+            <div className="lg:w-[80%] w-full  mx-auto my-10 text-center">
                 <h3 className='bg-thirdLightPrimary w-36 mx-auto font '>F e a t u r e</h3>
                 <h1 className='text-secondary font-semibold text-3xl mt-3 mb-6'>New Arrivals</h1>
                 <Slider {...settings}>
