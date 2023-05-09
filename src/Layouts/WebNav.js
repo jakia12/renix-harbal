@@ -118,17 +118,7 @@ const WebNav = () => {
                                     About Us
                                 </a>
                             </li>
-                            <li >
-                                <a
-                                    href="/security-check"
-                                    className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
 
-
-
-                                >
-                                    Security check
-                                </a>
-                            </li>
                             <li >
                                 <a
                                     href="/products"
@@ -160,6 +150,17 @@ const WebNav = () => {
 
                                 >
                                     Blogs
+                                </a>
+                            </li>
+                            <li >
+                                <a
+                                    href="/adminDashboard"
+                                    className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+
+
+
+                                >
+                                    Dashboard
                                 </a>
                             </li>
                             <li >
@@ -208,16 +209,7 @@ const WebNav = () => {
                                     isActive ? activeStyle : undefined}
                             >About us</NavLink>
                         </li>
-                        <li
 
-                        >
-                            <NavLink
-                                to={"/security-check"}
-                                className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
-                                style={({ isActive }) =>
-                                    isActive ? activeStyle : undefined}
-                            > Security check</NavLink>
-                        </li>
                         <li
 
                         >
@@ -248,6 +240,18 @@ const WebNav = () => {
                                     isActive ? activeStyle : undefined}
 
                             >Blogs</NavLink>
+                        </li>
+                        <li >
+                            <NavLink
+                                href="/adminDashboard"
+                                className='text-textColor p-2 uppercase text-[13px] hover:border-b-2 hover:border-[#90C347] transition'
+
+                                style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined}
+
+                            >
+                                Dashboard
+                            </NavLink>
                         </li>
                         <li
 
