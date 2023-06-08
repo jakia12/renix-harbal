@@ -3,7 +3,7 @@ import img1 from '../../../Assets/images/tree.svg'
 import img2 from '../../../Assets/images/medicine.svg'
 const NaturalSolution = () => {
     return (
-        <div className='lg:flex md:flex py-14'>
+        <div className='lg:flex md:flex py-14 bg-[#f7f7f7]'>
             <div className='md:w-1/3 '>
                 <img src={img1} alt='tree image' />
             </div>

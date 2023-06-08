@@ -37,3 +37,30 @@ table th {
 .jodit-status-bar {
     background-color: #F0FDF4 !important;
 }
+
+/*********our services section********/
+.section_title::before {
+    top: 52px;
+    content: '';
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    left: calc(50% - 59px);
+}
+
+
+.section_title::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 43px;
+    height: 4px;
+    background: #90C347;
+    bottom: 0;
+    left: calc(50% - 18px);
+    top: 50px;
+
+}
