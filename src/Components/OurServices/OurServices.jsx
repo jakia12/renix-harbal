@@ -54,7 +54,7 @@ const OurServices = () => {
     },
   ];
   return (
-    <section className="py-14 lg:py-20">
+    <section className="py-14 lg:py-20 bg-[#f7f7f7]">
       <div className="w-[93%] lg:w-[90%] mx-auto ">
         <h2 className="text-3xl font-semibold text-secondary section_title text-center relative mb-4">
           Services
