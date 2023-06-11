@@ -66,9 +66,17 @@ table th {
   top: -8px;
   height: 100%;
   width: 100%;
-  background: #badaf7;
+  background: #a6cf6c9d;
   border-radius: 5px;
   z-index: -1;
   transition: all 0.3s ease-out 0s;
   transform: translateZ(-1px);
+}
+
+.service_card {
+  transition: all 0.35s linear;
+}
+
+.service_card:hover {
+  margin-top: -10px;
 }
