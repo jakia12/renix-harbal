@@ -10,6 +10,7 @@ import Contact from "../Components/Home/Contact/Contact";
 import HomeSlider from "../Components/Home/HomeSlider/HomeSlider/HomeSlider";
 import NewsAndMedia from "../Components/Home/newAndMedia/NewsAndMedia";
 import OurServices from "../Components/OurServices/OurServices";
+import AboutUs from "../Components/aboutus/AboutUs";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <HomeSlider />
       <HealthCareProducts />
       <NaturalSolution />
+      <AboutUs />
       <OurServices />
       <FeatureProducts />
       <NewsLetter />
@@ -25,7 +27,6 @@ const Home = () => {
       <Contact />
       <NewsAndMedia />
       <LocationMap />
-
     </div>
   );
 };
