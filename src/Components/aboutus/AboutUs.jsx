@@ -1,5 +1,6 @@
 import React from "react";
 import abtPic from "../../Assets/images/abt.png";
+import abtPic2 from "../../Assets/images/abt2.png";
 
 const AboutUs = () => {
   return (
@@ -8,13 +9,14 @@ const AboutUs = () => {
         <h2 className="text-3xl font-semibold text-secondary section_title text-center relative mb-4 capitalize">
           What we Do
         </h2>
-        <div className="flex mt-[60px] items-center ">
-          <div className="w-6/12">
+        <div className="flex mt-[60px] items-center flex-wrap">
+          <div className="w-full lg:w-6/12">
             <div className="m-4">
-              <img src={abtPic} alt="" />
+              <img src={abtPic} alt="" className="hidden lg:block" />
+              <img src={abtPic2} alt="" className="block lg:hidden" />
             </div>
           </div>
-          <div className="w-6/12">
+          <div className="w-full lg:w-6/12">
             <div className="m-4">
               <h2 className="text-xl lg:text-2xl font-semibold text-textColor my-2 capitalize">
                 Healthy lifeStyle

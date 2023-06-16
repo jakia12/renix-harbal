@@ -64,8 +64,8 @@ const OurServices = () => {
         <div className="flex flex-wrap mt-[60px]">
           {services.map((service) => (
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className=" service_card relative py-[50px] px-[40px] m-4 border border-[#ddd] text-center">
-                <div className="mb-5 flex items-center justify-center  z-[10] ">
+              <div className="bg-[#fff] service_card relative py-[50px] px-[40px] m-4 border border-[#ddd] text-center">
+                <div className="mb-5 flex items-center justify-center  z-[9999] ">
                   <span className=" icon_image relative text-3xl bg-primary w-[70px] h-[70px] rounded-md text-white flex justify-center items-center">
                     <service.serviceIcon />
                   </span>

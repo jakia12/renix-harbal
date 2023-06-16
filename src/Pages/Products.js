@@ -67,9 +67,9 @@ const Products = () => {
     },
   ];
   return (
-    <div className="md:px-[103px]">
-      <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4">
-        <div className="p-8 md:col-span-1">
+    <div className="w-[95%] mx-auto">
+      <div className="flex  ">
+        <div className="m-2 hidden lg:block w-1/5">
           <div className="  border border-blue-gray-300 p-11">
             <h1 className="text-2xl font-semibold">Products Categories</h1>
             <div className="mt-8">
@@ -88,65 +88,64 @@ const Products = () => {
             </div>
           </div>
         </div>
-        <div class="col-span-3 my-4">
-          <div className=" flex gap-6 flex-wrap mx-auto justify-center ">
+        <div class="m-2 w-full lg:w-4/5">
+          <div className=" flex flex-wrap  ">
             {products.map((product) => (
-              <Link to={"/products/details"}>
+
+              <div
+                className="w-full lg:w-4/12"
+
+              >
                 <div
-                  className="relative w-full"
-                  onMouseEnter={() => setDisplayButton(product._id)}
-                  onMouseLeave={() => setDisplayButton("")}
+                  className="m-3 border border-gray-100 p-4"
+                  key={product._id}
                 >
-                  <div
-                    className="w-80  px-8 py-4 shadow-md rounded-lg"
-                    key={product._id}
-                  >
-                    <div className="w-full  h-64 rounded-xl ">
-                      <div className="flex justify-between items-center ">
-                        <span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
-                          Sold out
-                        </span>
-                        <span class="bg-green-100 self-end  text-green-800 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
-                          sale !
-                        </span>
-                      </div>
-                      <img
-                        src={product.image}
-                        alt=""
-                        className="w-44 mx-auto h-52 "
-                      />
-                      <p className="text-lightPrimary my-2 font-medium text-xs float-right">
-                        Stock: {product.stock}
-                      </p>
+                  <div className="">
+                    <div className="flex justify-between items-center ">
+                      <span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
+                        Sold out
+                      </span>
+                      <span class="bg-green-100 self-end  text-green-800 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+                        sale !
+                      </span>
                     </div>
-                    <div>
-                      <h1 className="text-secondary text-sm mt-2">
-                        {product.productName}
-                      </h1>
-                      <h1 className="text-secondary text-sm mt-2">
-                        Generic Name: {product.genericName}
-                      </h1>
-                      <h1 className="text-secondary text-sm mt-2">
-                        Strength: {product.strength}
-                      </h1>
-                      <p className="text-lightPrimary text-sm mt-2">
-                        BDT {product.price}
-                      </p>
-                    </div>
+                    <img
+                      src={product.image}
+                      alt=""
+                      className="w-44 mx-auto h-52 "
+                    />
+                    <p className="text-lightPrimary my-2 font-medium text-xs float-right">
+                      Stock: {product.stock}
+                    </p>
                   </div>
-                  <div className="w-full">
-                    {displayButton === product?._id && (
-                      <button
-                        className="bg-primary 
-                       opacity-100 w-full
-                        py-2  text-center top-1/2 text-white absolute"
-                      >
-                        Add to cart
-                      </button>
-                    )}
+                  <div>
+                    <h1 className="text-secondary text-sm mt-2">
+                      {product.productName}
+                    </h1>
+                    <h1 className="text-secondary text-sm mt-2">
+                      Generic Name: {product.genericName}
+                    </h1>
+                    <h1 className="text-secondary text-sm mt-2">
+                      Strength: {product.strength}
+                    </h1>
+                    <p className="text-lightPrimary text-sm mt-2">
+                      BDT {product.price}
+                    </p>
                   </div>
                 </div>
-              </Link>
+                <div className="w-full">
+                  {displayButton === product?._id && (
+                    <button
+                      className="bg-primary 
+                       opacity-100 w-full
+                        py-2  text-center top-1/2 text-white absolute"
+                    >
+                      Add to cart
+                    </button>
+                  )}
+                </div>
+              </div>
+
             ))}
           </div>
         </div>

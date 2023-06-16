@@ -59,7 +59,7 @@ table th {
   top: 50px;
 }
 
-.icon_image::before {
+.icon_image::after {
   position: absolute;
   content: "";
   left: -8px;
@@ -68,11 +68,10 @@ table th {
   width: 100%;
   background: #a6cf6c9d;
   border-radius: 5px;
-  z-index: -1;
+  z-index: 1;
   transition: all 0.3s ease-out 0s;
   transform: translateZ(-1px);
 }
-
 .service_card {
   transition: all 0.35s linear;
 }
