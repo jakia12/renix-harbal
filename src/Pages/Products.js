@@ -69,7 +69,7 @@ const Products = () => {
     },
   ];
   return (
-    <div className="w-[95%] mx-auto">
+    <div className="w-[95%] mx-auto py-10">
       <div className="flex  ">
         <div className="m-2 hidden lg:block w-1/5">
           <div className="  border border-blue-gray-300 p-11">
@@ -99,7 +99,7 @@ const Products = () => {
 
               >
                 <div
-                  className="overflow-hidden product_card m-3 border border-[#ddd] rounded-lg shadow-lg shadow-[#88888878] "
+                  className="overflow-hidden product_card m-3 border border-[#ddd] rounded-lg shadow-lg shadow-[#8888884a] "
                   key={product._id}
                 >
                   <div className="p-4 relative overflow-hidden ">
