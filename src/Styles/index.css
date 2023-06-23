@@ -72,10 +72,23 @@ table th {
   transition: all 0.3s ease-out 0s;
   transform: translateZ(-1px);
 }
+
 .service_card {
   transition: all 0.35s linear;
 }
 
 .service_card:hover {
   margin-top: -10px;
+}
+
+
+/********our product *********/
+.product_card {
+  overflow: hidden !important;
+}
+
+.product_card:hover .btn_overlay {
+  bottom: 0;
+  opacity: 1;
+  visibility: visible;
 }
