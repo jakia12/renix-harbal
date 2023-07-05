@@ -5,118 +5,241 @@ import ProductTable from "./ProductTable";
 import ProductInfo from "./ProductInfo";
 
 const ProductDetails = () => {
-  const [addToCart, setAddToCart] = useState(false);
-  const [activeTab, setActiveTab] = useState("tab1");
 
-  const active = {
-    border: "none",
-    backgroundColor: "primary",
-    textWeight: "700",
-    color: "white",
-  };
-  const [count, setCount] = useState(1);
-  const handleCountMinus = () => {
-    if (count === 1) {
-      setAddToCart(false);
-    } else {
-      setCount((prevCount) => prevCount - 1);
-    }
-  };
   return (
-    <div className="container lg:w-3/5  mx-auto mt-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="border m-3 flex justify-center items-start place-content-center border-blue-gray-500">
-          <img src={img1} className="h-[400px] w-[250px]" alt="" />
-        </div>
-        <div className="m-3">
-          <div className="shadow-lg p-7 ">
-            <h1 className="text-3xl font-semibold uppercase tracking-widest">
-              Mirapro 15mg tab
-            </h1>{" "}
-            <p>
-              <span className="font-medium text-lg">Generic Name : </span>
-              MIRTAZAPINE
-            </p>
-            <p>
-              <span className="font-medium text-lg">Supplier Name : </span>
-              SQUARE PHARMACEUTICALS LIMITED
-            </p>
-            <div className="flex items-center self-start gap-4 mt-3 ">
-              {" "}
-              <span className="py-4 text-3xl font-medium">BDT - 9</span>
-            </div>
-            {addToCart ? (
-              <div>
-                <div className=" border border-primary p-1  flex justify-evenly items-center">
-                  <span
-                    onClick={handleCountMinus}
-                    className="text-4xl font-medium cursor-pointer"
-                  >
-                    -
-                  </span>
-                  <aside>
-                    <input
-                      className="lg:px-8 py-2 text-center lg:text-xl font-semibold border-none outline-primary bg-primary text-white"
-                      type="text"
-                      value={count}
-                    />
-                  </aside>
-                  <span
-                    onClick={() => setCount(Number(count) + 1)}
-                    className="text-4xl font-medium cursor-pointer"
-                  >
-                    +
-                  </span>
+    <>
+      {/* product thumbnail slider section */}
+      <section className="pt-12 pb-6">
+        <div className="w-[93%] lg:w-[93%] mx-auto ">
+          {/* product info */}
+          <div className="flex justify-center flex-wrap md:flex-nowrap">
+            <div className="w-full lg:w-6/12 ">
+              <div className="flex gap-3 m-4">
+                <div className="hidden lg:block w-2/12">
+                  <ul className=''>
+                    {
+                      productGallary.map((thumb, idx) => (
+                        <li key={idx}
+                          className='point_r mb-2  '
+                          // onClick={() => setCurrent(idx)}
+                          onClick={() => handleThumbClick(idx)}
+
+                        >
+
+
+                          <img src={thumb.galleryImg} className='w-[80px] h-[80px] border border-gray-400 rounded' />
+
+
+
+                        </li>
+                      ))
+                    }
+
+                  </ul>
+                </div>
+                <div className="w-full lg:w-10/12">
+                  <div className="mx-auto  overflow-hidden bg-white relative z-[999999]">
+                    <div className="whitespace-nowrap transition-all w-full  ease duration-[800ms] z-10 "
+                      style={{
+                        transform: `translate3d(${-current * 100}%, 0, 0)`
+
+                      }}
+                    >
+
+                      {
+                        productGallary.map((sl) => {
+                          return (
+                            <div className=" inline-block rounded-md  z-10 border border-gray-300 p-6" key={sl.id}>
+                              <Magnifier src={sl.galleryImg} className='w-full lg:w-[450px] lg:h-[400px]' mgShape='square' mgWidth={180} mgHeight={180} />;
+
+                              {/* <img src={sl.galleryImg} className='w-full lg:w-[450px] lg:h-[400px]' /> */}
+
+                            </div>
+                          )
+                        })
+                      }
+                    </div>
+                    {/* prev and next arrow */}
+                    <div className="">
+                      <button
+                        onClick={handleClickPrev}
+                        className="text-textColor text-3xl absolute top-[45%] left-1">
+                        <IoIosArrowDropleftCircle />
+                      </button>
+                      <button
+                        onClick={handleClickNext}
+                        className="text-textColor text-3xl absolute top-[45%] right-1">
+                        <IoIosArrowDroprightCircle />
+                      </button>
+                    </div>
+
+                  </div>
+
                 </div>
               </div>
-            ) : (
-              <button
-                onClick={() => setAddToCart(true)}
-                className="border-2 w-full border-primary p-3 rounded-md text-primary text-md hover:text-white hover:bg-primary"
-              >
-                Add to Cart
-              </button>
-            )}
+            </div>
+            <div className="w-full lg:w-6/12">
+              <div className=" m-3 -z-10">
+
+                <h2 className="text-textPrimary font-semibold text-xl md:text-3xl mb-2">Gaming Headphone</h2>
+
+                <div className="flex items-center gap-2 text-textPrimary py-1    text-base  bg-white " >
+                  <span className='line-through text-gray-500'>$89</span>
+                  <span className=''>$49</span>
+                </div>
+
+                <p className="my-4 text-gray-500 text-sm ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                  molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                  numquam blanditiis </p>
+                {/* dot and size slider */}
+                <div className=" my-4">
+                  {/* price tag */}
+
+                  {/* color dot  slide */}
+                  <div>
+                    <span className='block text-sm font-normal text-textColor'>Color : {selectedColor ? selectedColor : "No Color Selected"} </span>
+                    <div className="flex items-center gap-3 mt-2">
+                      {/* color item */}
+                      <ul className='flex  items-center gap-2 '>
+                        {
+                          productGallary.map((col, indx) => (
+                            <li
+                              onClick={() => handleColorClick(col, indx)}
+                              className={`transition-all duration-300 ease-in-out  cursor-pointer ${indx === color ? "p-[3px] rounded-full border border-gray-600" : "p-[3px] border border-transparent"}`}
+                            >
+                              <div
+                                className={`w-6 h-6 leading-5 text-center rounded-full`}
+                                style={{ backgroundColor: `${col.color}` }}
+                              >
+
+                              </div>
+                            </li>
+                          ))
+                        }
+
+                      </ul>
+                      {/* clear button */}
+                      <button
+                        onClick={handleColorClear}
+                        className='text-textColor flex items-center text-[14px]'>
+                        <MdClose />
+                        <span>Clear</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* choose a  size  */}
+                  <div className='mt-4'>
+                    <span className='block text-sm font-normal text-textColor'>Size : {selectedSize ? selectedSize : "No Size Selected"} </span>
+                    <div className="flex items-center gap-3 mt-2">
+                      {/* size item */}
+                      <ul className='flex  items-center gap-2 '>
+                        {
+                          productGallary.map((sizeSlide, indx) => (
+                            <>
+                              <li
+                                onClick={() => handleSizeClick(sizeSlide, indx)}
+                                className={`transition-all duration-300 ease-in-out cursor-pointer ${indx === size ? "opacity-100" : "opacity-50"}`}
+                              >
+                                <button
+                                  className={`w-9 text-base h-9 leading-5 text-center rounded-md border border-gray-400 p-2 outline-none `}
+
+                                >
+                                  {sizeSlide.size}
+                                </button>
+                              </li>
+
+                            </>
+                          ))
+                        }
+
+                      </ul>
+                      {/* clear button */}
+                      <button
+                        onClick={handleSizeClear}
+                        className='text-textColor flex items-center text-[14px]'>
+                        <MdClose />
+                        <span>Clear</span>
+                      </button>
+                    </div>
+
+                  </div>
+
+
+                </div>
+                {/* cart button and increment */}
+                <div className="flex items-center my-4 gap-5">
+                  {/* increment and decrement btn */}
+                  <div className="flex gap-1">
+                    <button className="w-9 h-9 rounded  bg-gray-100 border border-gray-300">+</button>
+                    <span className='w-9 h-9 rounded border border-gray-300 bg-bgOne flex items-center justify-center'>5</span>
+                    <button className="w-9 h-9 rounded  bg-gray-100 border border-gray-300">-</button>
+                  </div>
+
+                  {/* add to cart button */}
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className=" text-white py-2 px-7  hover: rounded text-sm  bg-primary   border-2 border-transparent hover:border-textColor  hover:bg-transparent hover:text-textColor capilatize" >
+                    Add to Cart
+                  </button>
+                  {/* add to wishlist */}
+
+                </div>
+                <hr className='my-3 border-0.5 border-gray-200' />
+                {/* product others info */}
+                <div className="flex items-center gap-3 mb-2">
+                  <span className='block text-[16px] font-medium text-textColor'>Category : </span>
+                  <span className='block text-sm font-normal text-textColor'>Headphone</span>
+                </div>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className='block text-[16px] font-medium text-textColor'>Brand  : </span>
+                  <span className='block text-sm font-normal text-textColor'>Apple</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section >
+      {/* product tabs section*/}
+      <hr className="my-9 border-0.5 border-gray-200" />
+      <section>
+        <div className="w-[94%] lg:w-[90%] mx-auto ">
+
+          <ProductInfoTabs />
+        </div>
+      </section>
+
+      <hr className="my-9 border-0.5 border-gray-200" />
+
+      {/* related production section */}
+      <section className="py-6 ">
+        <div className="w-[94%] lg:w-[93%] mx-auto ">
+          <h2 className="text-2xl text-textColor font-semibold text-left capitalize mb-3 ml-3">
+            Related Products
+          </h2>
+          {/* section title */}
+          <div className="flex items-center justify-between">
+
+            <div className="flex items-center  flex-wrap">
+              {
+                products.slice(0, 8).map((product) => (
+
+                  <div className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 xxl:w-1/5" key={product._id}>
+                    <SingleProduct product={product} />
+                  </div>
+
+                ))
+              }
+
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="relative overflow-x-auto m-3 mt-8 mb-6">
-        <div>
-          <ul className="flex">
-            <li
-              onClick={() => setActiveTab("tab1")}
-              className={
-                activeTab === "tab1"
-                  ? " md:float-left text-sm bg-primary py-2 text-white border-0 md:leading-10 text-center font-bold uppercase box-border mr-3  px-6"
-                  : "md:float-left px-6 border border-lightTextColor py-2  mr-3 text-sm  md:leading-10 text-center uppercase box-border "
-              }
-            >
-              Product Details
-            </li>
-
-            <li
-              onClick={() => setActiveTab("tab2")}
-              className={
-                activeTab === "tab2"
-                  ? "md:float-left text-sm bg-primary text-white border-0 md:leading-10 text-center font-bold uppercase box-border py-2 px-6"
-                  : "md:float-left px-6 border border-lightTextColor text   mr-3 text-sm py-2 md:leading-10 text-center uppercase box-border "
-              }
-            >
-              Product Information
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="border lg:mb-12 m-3 border-gray px-4 mt-8 ">
-        {activeTab === "tab1" ? (
-          <ProductTable></ProductTable>
-        ) : (
-          <ProductInfo></ProductInfo>
-        )}
-      </div>
-    </div>
-  );
+    </>
+  )
 };
 
 export default ProductDetails;
