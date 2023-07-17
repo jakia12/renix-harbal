@@ -31,42 +31,36 @@ const AddMedicine = () => {
     // console.log(parsed)
 
     //handle add medicine
-    // const handleAddMedicine = (data) => {
+    const handleAddMedicine = (data, e) => {
+        e.preventDefault();
+        const medicine = {
+            data: new Date().getDate(),
+            month: new Date().getDate(),
+            year: new Date().getFullYear(),
+            name: data.name,
+            genericName: data.genericName,
+            medicineCategory: data.medicineCategory,
+            image: image,
+            price: data.price,
+            description: content,
+            strength: data.strength,
+            securityCode: data.securityCode,
+            stock: data.stock,
+            medicineType: data.medicineType,
+            medicineStatus: data.medicineStatus
 
-    //     const image = data.img[0];
-    //     const formData = new FormData();
-    //     formData.append('image', image);
+        }
 
-    //     fetch('/uploads', {
-    //         method: "POST",
-    //         body: formData,
 
-    //         // headers: {
-    //         //     "Content-Type": "multipart/form-data"
-    //         // }
-    //     }).then(res => res.json()).then(data => {
-    //         console.log(data)
-    //     })
+        // create medicine
+        fetch()
+            .then()
+            .then()
 
-    //     const medicine = {
-    //         // data: new Date().getDate(),
-    //         // month: new Date().getDate(),
-    //         // year: new Date().getFullYear(),
-    //         name: data.name,
-    //         // genericName: data.genericName,
-    //         medicineCategory: data.medicineCategory,
-    //         image: data.img,
-    //         // price: data.price,
-    //         // description: content,
-    //         // strength: data.strength,
-    //         // securityCode: data.securityCode,
-    //         // stock: data.stock,
-    //         // medicineType: data.medicineType,
-    //         // medicineStatus: data.medicineStatus
+        console.log(medicine)
 
-    //     }
-    //     console.log(medicine)
-    // }
+
+    }
 
 
     const handleFileChange = (e) => {
@@ -88,33 +82,29 @@ const AddMedicine = () => {
 
 
 
-    const handleUpload = (e) => {
 
-
-    };
 
     return (
         <section className="py-10 md:py-14">
             <div className=' form_wrapper bg-white px-10  w-full mx-auto md:max-w-4xl lg:max-w-4xl rounded'>
 
                 <h2 className="text-3xl font-semibold text-dark  mb-10 text-center">Add Medicine</h2>
-                <p>{image}</p>
-                <img src={`http://localhost:5000/${image}`} alt={image} />
+
+
 
                 <form
 
-                    onSubmit={handleUpload}
+                    onSubmit={handleSubmit(handleAddMedicine)}
 
                     className="shadow-lg shadow-gray-300 px-8 py-10 rounded flex flex-col gap-4 text-left"
 
                 >
-                    <input type="file" onChange={handleFileChange} />
-                    <input type='submit' className='bg-primary py-2 px-6 text-white block w-[200px] mt-3' value='Upload' />
+
 
                     <div className="md:flex items-center">
                         {/* medicine name */}
 
-                        {/* <div className="mb-1  w-full md:w-[50%] mr-0 md:mr-2">
+                        <div className="mb-1  w-full md:w-[50%] mr-0 md:mr-2">
                             <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white">Medicine Name</label>
                             <input
                                 type="text"
@@ -128,9 +118,9 @@ const AddMedicine = () => {
                                 })}
                             />
                             {errors.name && <p className='text-red-500 mt-1'>{errors.name.message}</p>}
-                        </div> */}
+                        </div>
                         {/* medicine generic name */}
-                        {/* <div className="mb-1 w-full md:w-[50%] ml-0 md:ml-2">
+                        <div className="mb-1 w-full md:w-[50%] ml-0 md:ml-2">
                             <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white">Medicine Generic Name</label>
                             <input
                                 type="text"
@@ -144,11 +134,11 @@ const AddMedicine = () => {
                                 })}
                             />
                             {errors.genericName && <p className='text-red-500 mt-1'>{errors.genericName.message}</p>}
-                        </div> */}
+                        </div>
                     </div>
 
                     {/* medicine category */}
-                    {/* 
+
                     <div className="mb-1">
                         <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white">Medicine Category</label>
                         <select className="bg-[#F0FDF4] text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -165,22 +155,30 @@ const AddMedicine = () => {
 
                         </select>
                         {errors.category && <p className='text-red-500 mt-1'>{errors.category.message}</p>}
-                    </div> */}
+                    </div>
                     {/* medicine image */}
 
-                    {/* <div className="mb-1">
+                    <div className="mb-1">
                         <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white"> Image</label>
-                        <input className="block w-full text-sm text-gray-900  rounded-lg cursor-pointer bg-[#F0FDF4] dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 p-2" id="file_input" type="file"
+                        {/* <input className="block w-full text-sm text-gray-900  rounded-lg cursor-pointer bg-[#F0FDF4] dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 p-2" id="file_input" type="file"
                             {...register("img", {
                                 required: "Medicne Image is required",
 
 
                             })}
                         />
-                        {errors.img && <p className='text-red-500 mt-1'>{errors.img.message}</p>}
-                    </div> */}
+                        {errors.img && <p className='text-red-500 mt-1'>{errors.img.message}</p>} */}
+
+                        <div className="flex items-center gap-5">
+                            <input type="file" style={{ width: 107 }} onChange={handleFileChange} />
+                            {image && <img src={`http://localhost:5000/${image}`} alt={image} style={{ width: 100, height: 70 }} />}
+
+                        </div>
+
+
+                    </div>
                     {/* medicine price */}
-                    {/* <div className="mb-1">
+                    <div className="mb-1">
                         <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white"> Price</label>
                         <input
                             type="text"
@@ -194,12 +192,12 @@ const AddMedicine = () => {
                             })}
                         />
                         {errors.price && <p className='text-red-500 mt-1'>{errors.price.message}</p>}
-                    </div> */}
+                    </div>
                     {/* medicine description */}
-                    {/* <div className="mb-1">
+                    <div className="mb-1">
                         <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white">Medicine description</label>
-                       
-                        <JoditEditor
+
+                        {/* <JoditEditor
                             ref={editor}
                             value={content}
                             // config={config}
@@ -214,11 +212,11 @@ const AddMedicine = () => {
                             //tabIndex={1} // tabIndex of textarea
                             onChange={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
                         // onChange={newContent => { }}
-                        />
-                       
-                    </div> */}
+                        /> */}
+
+                    </div>
                     {/* medicine strength */}
-                    {/* <div className="mb-1">
+                    <div className="mb-1">
                         <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white"> Strength</label>
                         <input
                             type="text"
@@ -232,9 +230,9 @@ const AddMedicine = () => {
                             })}
                         />
                         {errors.strength && <p className='text-red-500 mt-1'>{errors.strength.message}</p>}
-                    </div> */}
+                    </div>
                     {/* medicine security code */}
-                    {/* <div className="mb-1">
+                    <div className="mb-1">
                         <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white"> Security Code</label>
                         <input
                             type="text"
@@ -249,9 +247,9 @@ const AddMedicine = () => {
                         />
                         {errors.securityCode && <p className='text-red-500 mt-1'>{errors.securityCode.message}</p>}
 
-                    </div> */}
+                    </div>
                     {/* medicine stock */}
-                    {/* <div className="mb-1">
+                    <div className="mb-1">
                         <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white"> Stock</label>
                         <input
                             type="text"
@@ -270,7 +268,7 @@ const AddMedicine = () => {
 
                     <div className="md:flex items-center">
 
-                       
+
                         <div className="mb-1  w-full md:w-[50%] mr-0 md:mr-2">
                             <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white">Medicine Type</label>
                             <select id="condition"
@@ -291,7 +289,7 @@ const AddMedicine = () => {
                             </select>
                             {errors.type && <p className='text-red-500 mt-1'>{errors.type.message}</p>}
                         </div>
-                     
+
                         <div className="mb-1  w-full md:w-[50%] mr-0 md:ml-2">
                             <label for="repeat-password" class="block mb-2 text-[13px] font-normal text-gray-900 dark:text-white"> Status</label>
                             <select id="condition"
@@ -310,14 +308,14 @@ const AddMedicine = () => {
                             </select>
                             {errors.status && <p className='text-red-500 mt-1'>{errors.status.message}</p>}
                         </div>
-                    </div>*/}
+                    </div>
 
 
-                    {/* <div className="text-center pt-3">
-                        <button className='bg-primary hover:bg-lightPrimary text-white  py-2 rounded-lg text-lg w-fit px-8' type="submit" >
-                            Add Product
-                        </button>
-                    </div> */}
+                    <div className="text-center pt-3">
+                        <button className='bg-primary hover:bg-lightPrimary text-white  py-2 rounded-lg text-lg w-fit px-8' type="submit">Submit</button>
+
+
+                    </div>
                 </form>
 
             </div>
